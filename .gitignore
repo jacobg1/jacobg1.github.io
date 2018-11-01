@@ -6,3 +6,10 @@ yarn-error.log
 # Build directory
 /public
 .DS_Store
+
+# settings
+.eslintrc.json
+settings.json
+
+#package-lock
+package-lock.json
