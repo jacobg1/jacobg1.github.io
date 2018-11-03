@@ -15,9 +15,8 @@ const IndexPage = () => (
   <Layout>
     
     <BodyContainer>
-      <h1>Jacob Greenwald</h1>
+      {/* <h1>Jacob Greenwald</h1> */}
       <p>A creative thinker who uses ingenuity to find innovative solutions to challenging problems. I use insight, imagination and coding fundamentals to create success by drawing on my dedication, persistence and passion for web development</p>
-      <p>Now go build something great.</p>
       <StyledLink to="/project-one/">Projects</StyledLink>
     </BodyContainer>
   </Layout>

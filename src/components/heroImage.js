@@ -8,9 +8,10 @@ const StyledHeroImage = styled(props => <Img {...props} />) `
       position: absolute !important;
     }
     left: 0;
-    top: 85px;
+    top: 0;
     width: 100%;
-    height: 30%;
+    height: 246px;
+    z-index: -1;
 `   
 
 const HeroImage = ({ data }) => (

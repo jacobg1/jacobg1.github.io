@@ -5,7 +5,9 @@ import styled from 'styled-components'
 
 const HeaderContainer = styled.div `
     background: #6a6273;
-    height: 85px;
+    height: 225px;
+    margin: 51px auto 20px auto;
+    width: 79%;
 `
 const HeaderContentWrapper = styled.div `
     margin: 0 auto;
@@ -18,7 +20,10 @@ const HeaderTitle = styled.h1`
 const HeaderLink = styled(Link) `
     color: white;
     text-decoration: none;
-    font-size: 15px;
+        font-size: 26px;
+    margin-top: 68px;
+    width: 201px;
+    display: block;
 `
 
 const AboutMeLink = styled(HeaderLink) `
@@ -31,7 +36,7 @@ const Header = ({ siteTitle }) => (
     <HeaderContentWrapper>
       <HeaderTitle>
         <HeaderLink to="/">{siteTitle}</HeaderLink>
-        <AboutMeLink to="/about/">About Me</AboutMeLink>
+        {/* <AboutMeLink to="/about/">About Me</AboutMeLink> */}
       </HeaderTitle>
     </HeaderContentWrapper>
     <HeroImage />
