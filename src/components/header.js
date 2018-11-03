@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import HeroImage from '../components/heroImage'
 
 const Header = ({ siteTitle }) => (
   <div
@@ -25,7 +26,7 @@ const Header = ({ siteTitle }) => (
         >
           {siteTitle}
         </Link>
-        <Link
+        {/* <Link
           to="/about/"
           style={{
             color: 'white',
@@ -37,9 +38,10 @@ const Header = ({ siteTitle }) => (
       }}
     >
       About Me
-        </Link>
+        </Link> */}
       </h1>
     </div>
+    <HeroImage />
   </div>
 )
 
