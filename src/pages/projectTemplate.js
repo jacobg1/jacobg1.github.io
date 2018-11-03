@@ -2,18 +2,16 @@ import React from "react";
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 
-export default function Template({
-  data
-}) {
-  const post = data.markdownRemark;
+export default function Template({ data }) {
+  const project = data.markdownRemark
   return (
     <Layout>
-    <div className="blog-post-container">
-      <div className="blog-post">
-        <h1>{post.frontmatter.title}</h1>
+    <div className="project-container">
+      <div className="project">
+        <h1>{project.frontmatter.title}</h1>
         <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: post.html }}
+          className="project-content"
+          dangerouslySetInnerHTML={{ __html: project.html }}
         />
       </div>
     </div>
@@ -21,7 +19,7 @@ export default function Template({
   );
 }
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
+  query ProjectByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
@@ -31,4 +29,3 @@ export const pageQuery = graphql`
     }
   }
 `
-  ;
