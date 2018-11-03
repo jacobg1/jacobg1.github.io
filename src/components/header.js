@@ -1,48 +1,41 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import HeroImage from '../components/heroImage'
+import styled from 'styled-components'
 
+const HeaderContainer = styled.div `
+    background: #6a6273;
+    height: 85px;
+`
+const HeaderContentWrapper = styled.div `
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 15px 1.0875rem;
+`
+const HeaderTitle = styled.h1`
+    margin: 0;
+`
+const HeaderLink = styled(Link) `
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+`
+
+const AboutMeLink = styled(HeaderLink) `
+    padding-right: 15px;
+    float: right;
+    padding-top: 20px;
+`
 const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-        {/* <Link
-          to="/about/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-            float: 'right',
-            fontSize: 15,
-            paddingRight: 30,
-            paddingTop: 15,
-      }}
-    >
-      About Me
-        </Link> */}
-      </h1>
-    </div>
+  <HeaderContainer>
+    <HeaderContentWrapper>
+      <HeaderTitle>
+        <HeaderLink to="/">{siteTitle}</HeaderLink>
+        <AboutMeLink to="/about/">About Me</AboutMeLink>
+      </HeaderTitle>
+    </HeaderContentWrapper>
     <HeroImage />
-  </div>
+  </HeaderContainer>
 )
 
 export default Header

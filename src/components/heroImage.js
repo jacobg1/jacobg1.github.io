@@ -1,27 +1,28 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import styled from 'styled-components'
+
+const StyledHeroImage = styled(props => <Img {...props} />) `
+    &[style] {
+      position: absolute !important;
+    }
+    left: 0;
+    top: 85px;
+    width: 100%;
+    height: 30%;
+`   
 
 const HeroImage = ({ data }) => (
-    <Img
-        sizes={data.backgroundImage.childImageSharp.sizes}
-        style={{
-            position: "absolute",
-            left: 0,
-            top: 85,
-            width: "100%",
-            height: "30%"
-        }}
-    />
+    <StyledHeroImage sizes={data.backgroundImage.childImageSharp.sizes} />
 )
-
 
 
 export default props => (
     <StaticQuery
         query={graphql`
           query {
-            backgroundImage: file(relativePath: { regex:"/pineapple/" }) {
+            backgroundImage: file(relativePath: { regex: "/221435/" }) {
               childImageSharp {
                 sizes(maxWidth: 1500) {
                   ...GatsbyImageSharpSizes
