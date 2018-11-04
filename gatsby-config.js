@@ -2,7 +2,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: `Jacob Greenwald`,
+    title: `Jacob Greenwald Web Developer`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -21,8 +21,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'jacob-greenwald-portfolio',
+        short_name: 'portfolio',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
