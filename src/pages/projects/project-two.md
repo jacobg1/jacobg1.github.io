@@ -1,15 +1,24 @@
 ---
 path: "/project-two"
-title: "Project Two"
+title: "CRUNCHfm"
+githubLink: "https://github.com/jacobg1/CRUNCHfm"
+projectLink: "https://jacobg1.github.io/CRUNCHfm/"
+cover_image: "../../images/turntable.png"
 ---
 
-[Back](/project-one/)
-[Next](/project-three/)
+An internet radio station that plays live concert recordings for a given band and year. 
 
+&nbsp;
 
-Oooooh-weeee, my first blog post!
-First post Ipsum is a major key to success. Congratulations, you played yourself. Surround yourself with angels. Celebrate success right, the only way, apple. 
+Once users create their station CrunchFM makes a call to [archive.org's](https://archive.org) API and plays random live recordings based on the user's input. Users can change their station at any time to create a unique listening experience. 
 
-The key is to drink coconut, fresh coconut, trust me. Egg whites, turkey sausage, wheat toast, water. Of course they don’t want us to eat our breakfast,so we are going to enjoy our breakfast. 
+&nbsp;
+
+As a user's station plays, CrunchFM creates a dynamic playlist of all the songs that have been listened to in that session. Users can then replay songs with the click of a button. 
+ 
+&nbsp;
+
+Built in React with HTML, CSS and JavaScript.
+
 
 

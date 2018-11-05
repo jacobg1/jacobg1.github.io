@@ -1,15 +1,21 @@
 ---
 path: "/project-three"
-title: "Project Three"
+title: "Simon Says"
+githubLink: "https://github.com/jacobg1/Simon-Says"
+projectLink: "https://jacobg1.github.io/Simon-Says/"
+cover_image: "../../images/simon.png"
+
 ---
 
-[Back](/project-two/)
+My first website.
 
+&nbsp;
 
-Oooooh-weeee, my first blog post!
-First post Ipsum is a major key to success. Congratulations, you played yourself. Surround yourself with angels. Celebrate success right, the only way, apple. 
+A simple simon says game. Players must match patterns of increasing complexity and length. If a player makes an incorrect choice, they game starts over. Make it to level five and win! Includes sound on / off modes.
 
-The key is to drink coconut, fresh coconut, trust me. Egg whites, turkey sausage, wheat toast, water. Of course they don’t want us to eat our breakfast,so we are going to enjoy our breakfast. 
+&nbsp;
+
+Created with JavaScript, HTML / CSS and JQuery.
 
 
 
