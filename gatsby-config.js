@@ -21,6 +21,7 @@ module.exports = {
         maxWidth: 1080,
       },
     },
+    `gatsby-remark-copy-linked-files`,
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
