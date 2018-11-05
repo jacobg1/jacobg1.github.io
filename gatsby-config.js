@@ -15,6 +15,12 @@ module.exports = {
       },
       
     },
+    {
+      resolve: `gatsby-remark-images`,
+      options: {
+        maxWidth: 1080,
+      },
+    },
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
