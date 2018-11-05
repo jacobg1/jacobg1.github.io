@@ -39,6 +39,7 @@ const Statement = styled.p `
   font-size: 15px;
   color: black;
   font-weight: bold;
+  line-height: 23px;
 `
 
 const FlexContainer = styled.div `
@@ -100,6 +101,32 @@ const Triangle = styled(Shapes)`
   box-shadow: none;
   filter: drop-shadow(0px 2.5px 1px #6a6373);
 `
+const KeyContent = styled(ContentCard)`
+  width: 80%;
+`
+const KeyHolder = styled.div `
+  position: relative;
+  display: inline-block;
+`
+const KeyCircle = styled(Circle) `
+  position: static;
+  display: inline-block;
+`
+const KeySquare = styled(Square)`
+  position: static;
+  display: inline-block;
+  margin-left: 19px;
+`
+const KeyTriangle = styled(Triangle)`
+  position: static;
+  display: inline-block;
+  margin-top: 5px;
+      filter: drop-shadow(0px 2.5px 1.6px #6a6373);
+`
+const Key = styled.span`
+  padding-left: 5px;
+  font-size: 16px;
+`
 var mySkills = [
   { type: 'lang', name: 'JS' }, 
   { type: 'frame', name: 'Angular' },
@@ -131,6 +158,21 @@ const IndexPage = () => (
                   <StyledLink to="/project-one/">Projects</StyledLink>
                 </LinkContainer>   */}
             </ContentCard>
+            <KeyContent>
+              <KeyHolder>
+                  <KeyCircle></KeyCircle>
+                  <Key>- language</Key>
+              </KeyHolder>
+              <KeyHolder>
+                <KeySquare></KeySquare>
+                <Key>- framework</Key>
+              </KeyHolder>
+              <KeyHolder>
+                <KeyTriangle></KeyTriangle>
+                <Key>- database</Key>
+              </KeyHolder>
+            </KeyContent>
+
             <FlexContainer>
                 {
                   mySkills.map((skill, index) => (
