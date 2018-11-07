@@ -1,5 +1,5 @@
 ---
-path: "/project-two"
+path: "/crunchfm"
 title: "CRUNCHfm"
 githubLink: "https://github.com/jacobg1/CRUNCHfm"
 projectLink: "https://jacobg1.github.io/CRUNCHfm/"

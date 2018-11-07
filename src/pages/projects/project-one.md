@@ -1,5 +1,5 @@
 ---
-path: "/project-one"
+path: "/space-search"
 title: "Space Search"
 githubLink: "https://github.com/jacobg1/SpaceSearch"
 projectLink: "http://space-search.surge.sh"
