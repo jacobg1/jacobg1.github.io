@@ -1,29 +1,32 @@
-import React from "react";
+import React from 'react';
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import styled from 'styled-components'
-import { Link } from "gatsby";
+import { Link } from 'gatsby';
 import githubLogo from '../images/github-brands.svg'
 import rocketLogo from '../images/rocket-solid.svg'
-import Img from "gatsby-image";
+import Img from 'gatsby-image';
+import { breakpoints } from '../components/breakpoints'
 
 const ProjectCard = styled.div`
-   background: #f1f1f1;
-    border-radius: 5px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    max-width: 295px;
-    margin: 0 auto 20px auto;
-    && a {
-      text-decoration: none;
-    }
+  background: #f1f1f1;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  margin: 0 auto 20px auto;
+  width: 90%;
+  && a {
+    text-decoration: none;
+    color: #70b0fe;
+    font-weight: bold;
+  }
 `
 const FlexContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 295px;
-      margin: 20px auto 5px auto;
+  width: 90%;
+  margin: 20px auto 5px auto;
 `
 const LinkHolder = styled.div `
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -33,38 +36,37 @@ const LinkHolder = styled.div `
   height: 40px;
   text-align: center;
   position: relative;
-      background: #73b2fb;
-      border-radius: 30px;
-
-    && a {
-      text-decoration: none; 
-      width: 100%;
-      display: inline-block;
-      padding-left: 5px;
-          font-size: 15px;
+  background: #73b2fb;
+  border-radius: 30px;
+  && a {
+    text-decoration: none; 
+    width: 100%;
+    display: inline-block;
+    padding-left: 5px;
+    font-size: 15px;
     font-weight: bold;
     height: 100%;
     padding-top: 10px;
     color: white;
+    @media ${breakpoints.mobile} {
+      font-size: 17px;
     }
-    && img{
-      width: 20px;
-      margin: 0;
-          position: absolute;
+  }
+  && img{
+    width: 20px;
+    margin: 0;
+    position: absolute;
     left: 10px;
     top: 10px;
-
-    
-    }
+  }
 `
 
 const ProjectTitle = styled.h2 `
   color: white;
   text-align: center;
-
   text-shadow: 0 1px 1px rgb(106,80,91);
-  font-size: 28px;
-          margin: 40px 0 15px 0;
+  font-size: 35px;
+  margin: 40px 0 15px 0;
 `
 const ProjectHolder = styled.div `
   padding: 10px;
@@ -78,25 +80,44 @@ const ProjectLink = styled(Link)`
   color: #73b2fb;
   font-weight: bold;
   text-decoration: none;
-      font-size: 14px;
-    border-bottom: 4px solid;
-    padding: 0 2px 4px 2px;
+  font-size: 14px;
+  border-bottom: 4px solid;
+  padding: 0 2px 4px 2px;
+  @media ${breakpoints.mobile} {  
+    font-size: 16px;
+  }
 `
 const ProjectIcon = styled(Img)`
   float: right;
+`
+const TopIconFlex = styled(FlexContainer) `
+  margin-top:0;
+  margin-bottom: 20px;
+`
+const BottmomIconFlex = styled(FlexContainer)`
+  margin-top: 20px;
+`
+const NavFlex = styled(FlexContainer) `
+  max-width: 450px;
+  margin-top: 33px;
+  margin-bottom: 35px;
+`
+const ButtonFlex = styled(FlexContainer) `
+  margin-bottom: 25px;
+  max-width: 550px;
 `
 export default function Template({ data }) {
   const project = data.markdownRemark
   return (
     <Layout>
       <ProjectTitle>{project.frontmatter.title}</ProjectTitle>
-      <FlexContainer>
-        <ProjectLink to="/project-one/" activeStyle={{color: "black"}}>Space Search</ProjectLink>
-        <ProjectLink to="/project-two/" activeStyle={{ color: "black" }}>CRUNCHfm</ProjectLink>
-        <ProjectLink to="/project-three/" activeStyle={{ color: "black" }}>Simon Says</ProjectLink>
+      <NavFlex>
+        <ProjectLink to="/space-search/" activeStyle={{color: "black"}}>Space Search</ProjectLink>
+        <ProjectLink to="/crunchfm/" activeStyle={{ color: "black" }}>CRUNCHfm</ProjectLink>
+        <ProjectLink to="/simon-says/" activeStyle={{ color: "black" }}>Simon Says</ProjectLink>
 
-      </FlexContainer>
-      <FlexContainer>
+      </NavFlex>
+      <ButtonFlex>
       <LinkHolder>
       
         <a href={project.frontmatter.githubLink} target="_blank">
@@ -110,16 +131,29 @@ export default function Template({ data }) {
           App
         </a>
       </LinkHolder>
-      </FlexContainer>
+      </ButtonFlex>
       <ProjectCard>
         <ProjectHolder>
+          {/* <TopIconFlex>
+            <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
 
+          <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
+          <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
+          <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
+          <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
+          </TopIconFlex> */}
         <div
           className="project-content"
           dangerouslySetInnerHTML={{ __html: project.html }}
         />
-          <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
-
+          <BottmomIconFlex>
+            <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
+          
+            <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
+            <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
+            <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
+            <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
+          </BottmomIconFlex>
         </ProjectHolder>
 
       </ProjectCard>
