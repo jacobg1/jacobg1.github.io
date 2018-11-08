@@ -13,11 +13,15 @@ const HeaderContainer = styled(Card) `
   height: 225px;
   margin: 40px auto 20px auto;
   width: 90%;
+  max-width: 525px;
 `
 const HeaderContentWrapper = styled.div `
   margin: 0 auto;
   max-width: 960px;
-  padding: 13px 1.0875rem 17px 1.0875rem;
+  padding: 10px 1.0875rem 17px 1.0875rem;
+  @media ${breakpoints.tablet} {
+      padding-top: 0;
+  }
 `
 const HeaderTitle = styled.h1`
   margin: 0 auto;
@@ -92,7 +96,7 @@ const ContactButton = styled(Link) `
 `
 
 const Header = ({ siteTitle }) => (
-  <HeaderContainer as={Card}>
+  <HeaderContainer>
     <AboutMeWrapper>
       <AboutMeLink to="/space-search/">Projects</AboutMeLink>
 
