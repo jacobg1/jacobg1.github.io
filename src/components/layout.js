@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import Header from './header'
+import Footer from './footer'
 import './layout.css'
 import styled from 'styled-components'
 
@@ -12,6 +13,7 @@ const SiteContainer = styled.div `
     margin: 0 auto;
     max-width: 960px;
     padding-top: 0;
+    padding-bottom: 65px;
 `
 const Layout = ({ children }) => (
   <StaticQuery
@@ -20,6 +22,7 @@ const Layout = ({ children }) => (
         site {
           siteMetadata {
             title
+            email
           }
         }
       }
@@ -39,6 +42,7 @@ const Layout = ({ children }) => (
         <Header siteTitle={data.site.siteMetadata.title} />
 
         <SiteContainer>{children}</SiteContainer>
+        <Footer email={data.site.siteMetadata.email} />
       </>
     )}
   />
