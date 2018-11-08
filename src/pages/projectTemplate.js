@@ -14,6 +14,7 @@ const ProjectCard = styled.div`
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   margin: 0 auto 20px auto;
   width: 90%;
+  max-width: 600px;
   && a {
     text-decoration: none;
     color: #70b0fe;
@@ -71,9 +72,18 @@ const ProjectTitle = styled.h2 `
 const ProjectHolder = styled.div `
   padding: 10px;
   overflow: auto;
+  
+  @media ${breakpoints.mobile} {
+      padding: 20px 20px 15px 20px;
+    }
   && p {
     line-height: 23px;
     margin: 0;
+    font-size: 16px;
+    @media ${breakpoints.mobile} {
+      font-size: 17px;
+      line-height: 25px;
+    }
   } 
 `
 const ProjectLink = styled(Link)`
@@ -171,19 +181,15 @@ export const pageQuery = graphql`
         githubLink
         projectLink
         cover_image {
-              childImageSharp {
-    fixed(width: 30, height: 30) {
+          childImageSharp {
+            fixed(width: 30, height: 30) {
               ...GatsbyImageSharpFixed
-    }
-  }
             }
-        
+          }
+        }
       }
     }
-    
   }
-  
-    
 `
 
 // placeholderImage: file(relativePath: { regex: "/github/" }) {
