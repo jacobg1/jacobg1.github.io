@@ -14,7 +14,7 @@ const ProjectCard = styled.div`
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   margin: 0 auto 20px auto;
   width: 90%;
-  max-width: 600px;
+  max-width: 1000px;
   && a {
     text-decoration: none;
     color: #70b0fe;
@@ -52,6 +52,9 @@ const LinkHolder = styled.div `
     @media ${breakpoints.mobile} {
       font-size: 17px;
     }
+    @media ${breakpoints.desktop} {
+      max-width: 275px;
+    }
   }
   && img{
     width: 20px;
@@ -68,14 +71,18 @@ const ProjectTitle = styled.h2 `
   text-shadow: 0 1px 1px rgb(106,80,91);
   font-size: 35px;
   margin: 40px 0 15px 0;
+  @media ${breakpoints.laptop} {
+    font-size: 40px;
+    margin: 50px 0 45px 0;
+  }
+  
 `
 const ProjectHolder = styled.div `
   padding: 10px;
   overflow: auto;
-  
   @media ${breakpoints.mobile} {
-      padding: 20px 20px 15px 20px;
-    }
+    padding: 20px 20px 15px 20px;
+  }
   && p {
     line-height: 23px;
     margin: 0;
@@ -83,6 +90,10 @@ const ProjectHolder = styled.div `
     @media ${breakpoints.mobile} {
       font-size: 17px;
       line-height: 25px;
+    }
+    @media ${breakpoints.laptop} {
+      font-size: 19px;
+      line-height: 30px;
     }
   } 
 `
@@ -96,6 +107,9 @@ const ProjectLink = styled(Link)`
   @media ${breakpoints.mobile} {  
     font-size: 16px;
   }
+  @media ${breakpoints.laptop} {
+    font-size: 18px;
+  }
 `
 const ProjectIcon = styled(Img)`
   float: right;
@@ -105,7 +119,9 @@ const TopIconFlex = styled(FlexContainer) `
   margin-bottom: 20px;
 `
 const BottmomIconFlex = styled(FlexContainer)`
-  margin-top: 20px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  justify-content: center;
 `
 const NavFlex = styled(FlexContainer) `
   max-width: 450px;
@@ -115,6 +131,9 @@ const NavFlex = styled(FlexContainer) `
 const ButtonFlex = styled(FlexContainer) `
   margin-bottom: 25px;
   max-width: 550px;
+  @media ${breakpoints.laptop} {
+    max-width: 656px;
+  }
 `
 export default function Template({ data }) {
   const project = data.markdownRemark
@@ -159,10 +178,10 @@ export default function Template({ data }) {
           <BottmomIconFlex>
             <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
           
-            <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
-            <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
-            <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
-            <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
+            {/* <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} /> */}
+            {/* <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} /> */}
+            {/* <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} /> */}
+            {/* <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} /> */}
           </BottmomIconFlex>
         </ProjectHolder>
 
@@ -183,7 +202,7 @@ export const pageQuery = graphql`
         cover_image {
           childImageSharp {
             fixed(width: 30, height: 30) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_noBase64
             }
           }
         }

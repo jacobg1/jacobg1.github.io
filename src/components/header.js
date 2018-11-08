@@ -9,23 +9,30 @@ const Card = styled.div`
   background: linear-gradient(135deg,rgb(235,229,231) 0%,rgb(115, 178, 251) 24%,rgb(121,206,253) 50%,rgb(115,178,251) 70%,rgb(235,229,231) 100%);
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 `
+
 const HeaderContainer = styled(Card) `
   height: 225px;
   margin: 40px auto 20px auto;
   width: 90%;
-  max-width: 525px;
+  max-width: 775px;
+  @media ${breakpoints.tablet} {
+    width: 79%;
+  }
 `
+
 const HeaderContentWrapper = styled.div `
   margin: 0 auto;
   max-width: 960px;
   padding: 10px 1.0875rem 17px 1.0875rem;
   @media ${breakpoints.tablet} {
-      padding-top: 0;
+    padding-top: 0;
   }
 `
+
 const HeaderTitle = styled.h1`
   margin: 0 auto;
 `
+
 const HeaderLink = styled(Link) `
   color: #f1f1f1;
   text-decoration: none;
@@ -39,7 +46,12 @@ const HeaderLink = styled(Link) `
   @media ${breakpoints.mobile} {  
     font-size: 30px;
   }
+  @media ${breakpoints.laptop} {
+    font-size: 35px;
+    width: 290px;
+  }
 `
+
 const AboutMeWrapper = styled.div `
   height: 30px;
   width: 100px;
@@ -57,6 +69,7 @@ const AboutMeWrapper = styled.div `
     font-size: 16px;
   }
 `
+
 const AboutMeLink = styled(Link) `
   color: #ffffff;
   text-decoration: none;
@@ -68,6 +81,7 @@ const AboutMeLink = styled(Link) `
     padding-top: 8px;
   }
 `
+
 const ButtonWrapper = styled.div `
   height: 41px;
   width: 160px;
@@ -82,6 +96,7 @@ const ButtonWrapper = styled.div `
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   text-shadow: 0 1px 1px rgb(106,80,91);
 `
+
 const ContactButton = styled(Link) `
   color: #ffffff;
   vertical-align: middle;
@@ -99,14 +114,12 @@ const Header = ({ siteTitle }) => (
   <HeaderContainer>
     <AboutMeWrapper>
       <AboutMeLink to="/space-search/">Projects</AboutMeLink>
-
     </AboutMeWrapper>
         {/* <AboutMeWrapper>
             <AboutMeLink to="/about/">About Me</AboutMeLink>
 
         </AboutMeWrapper> */}
     <HeaderContentWrapper>
-
       <HeaderTitle>
         <HeaderLink to="/">{siteTitle}</HeaderLink>
       </HeaderTitle>

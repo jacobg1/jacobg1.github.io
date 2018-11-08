@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import {Link} from 'gatsby'
 import Layout from '../components/layout'
 import styled from 'styled-components'
+import { breakpoints } from '../components/breakpoints';
 
 const ContentCard = styled.div `
   max-width: 295px;
@@ -12,6 +13,14 @@ const ContentCard = styled.div `
   background: #f1f1f1;
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  @media ${breakpoints.tablet} {            
+    max-width: 607px;
+    padding: 25px;
+    text-align: center;
+  }
+  @media ${breakpoints.laptop} {
+    max-width: 663px;
+  }
 `
 
 const BodyContainer = styled.div `
@@ -40,6 +49,10 @@ const Statement = styled.p `
   color: black;
   font-weight: bold;
   line-height: 23px;
+  @media ${breakpoints.tablet} {
+    font-size: 20px;
+    line-height: 27px;
+  }
 `
 
 const FlexContainer = styled.div `
@@ -49,6 +62,12 @@ const FlexContainer = styled.div `
   justify-content: space-between;
   max-width: 295px;
   margin: 0 auto;
+  @media ${breakpoints.tablet} {
+    max-width: 492px;
+  }
+  @media ${breakpoints.laptop} {
+    max-width: 600px;
+  }
 `
 
 const SkillsHolder = styled.div `
@@ -68,6 +87,14 @@ const Skill = styled.p `
   padding: 14px 0;
   text-shadow: 0 1px 1px rgb(106,80,91);
   font-weight: bold;
+  @media ${breakpoints.tablet} {
+    padding: 20px 0;
+    font-size: 16px;
+  }
+  @media ${breakpoints.laptop} {
+    padding: 25px 0;
+    font-size: 18px;
+  }
 `
 const Shapes = styled.div`
   width: 13px;
@@ -103,6 +130,12 @@ const Triangle = styled(Shapes)`
 `
 const KeyContent = styled(ContentCard)`
   width: 80%;
+  @media ${breakpoints.tablet} {
+    max-width: 496px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+  }
 `
 const KeyHolder = styled.div `
   position: relative;
@@ -121,7 +154,11 @@ const KeyTriangle = styled(Triangle)`
   position: static;
   display: inline-block;
   margin-top: 5px;
-      filter: drop-shadow(0px 2.5px 1.6px #6a6373);
+  filter: drop-shadow(0px 2.5px 1.6px #6a6373);
+  @media ${breakpoints.tablet} {
+    margin-top: -13px;
+    margin-bottom: 2px;
+  }
 `
 const Key = styled.span`
   padding-left: 5px;

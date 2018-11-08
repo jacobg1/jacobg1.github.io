@@ -11,9 +11,9 @@ import styled from 'styled-components'
 
 const SiteContainer = styled.div `
     margin: 0 auto;
-    max-width: 960px;
+    ${'' /* max-width: 960px; */}
     padding-top: 0;
-    padding-bottom: 65px;
+    padding-bottom: 40px;
 `
 const Layout = ({ children }) => (
   <StaticQuery
