@@ -13,12 +13,16 @@ const ProjectCard = styled.div`
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   margin: 0 auto 20px auto;
-  width: 70%;
+  width: 90%;
   max-width: 833px;
   && a {
     text-decoration: none;
     color: #70b0fe;
     font-weight: bold;
+  }
+
+  @media ${breakpoints.tablet} {
+    width: 90%;
   }
 `
 const FlexContainer = styled.div`
@@ -33,7 +37,7 @@ const LinkHolder = styled.div `
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   margin-bottom: 20px;
   width: 45%;
-  height: 40px;
+  line-height: 40px;
   text-align: center;
   position: relative;
   background: #73b2fb;
@@ -44,6 +48,10 @@ const LinkHolder = styled.div `
     box-shadow: none;
     border-radius: 0;
   }
+
+  @media ${breakpoints.desktop} {
+    line-height: 50px;
+  }
    
   & a {
     text-decoration: none; 
@@ -53,7 +61,7 @@ const LinkHolder = styled.div `
     font-size: 15px;
     font-weight: bold;
     height: 100%;
-    padding-top: 10px;
+    ${'' /* padding-top: 10px; */}
     color: white;
 
     @media ${breakpoints.mobile} {
@@ -62,6 +70,7 @@ const LinkHolder = styled.div `
 
     @media ${breakpoints.desktop} {
       max-width: 275px;
+      font-size: 22px;
     }
   }
   && img{
@@ -70,6 +79,12 @@ const LinkHolder = styled.div `
     position: absolute;
     left: 10px;
     top: 10px;
+    
+    @media ${breakpoints.desktop} {
+      width: 27px;
+      left: 14px;
+      top: 12px;
+    }
   }
 `
 
@@ -83,6 +98,11 @@ const ProjectTitle = styled.h2 `
   @media ${breakpoints.laptop} {
     font-size: 40px;
     margin: 50px 0 45px 0;
+  }
+
+  @media ${breakpoints.desktop} {
+    font-size: 45px;
+    margin-top: 60px;
   }
   
 `
@@ -108,6 +128,10 @@ const ProjectHolder = styled.div `
       font-size: 19px;
       line-height: 30px;
     }
+    @media ${breakpoints.desktop} {
+      font-size: 24px;
+      line-height: 31px;
+    }
   } 
   
 `
@@ -130,6 +154,10 @@ const ProjectLink = styled(Link)`
   @media ${breakpoints.laptop} {
     font-size: 18px;
   }
+
+  @media ${breakpoints.desktop} {
+    font-size: 22px;
+  }
 `
 const ProjectIcon = styled(Img)`
   float: right;
@@ -150,6 +178,10 @@ const NavFlex = styled(FlexContainer) `
   max-width: 450px;
   margin-top: 33px;
   margin-bottom: 35px;
+
+  @media ${breakpoints.desktop} {
+    max-width: 525px
+  }
 `
 
 const ButtonFlex = styled(FlexContainer) `
@@ -158,6 +190,10 @@ const ButtonFlex = styled(FlexContainer) `
 
   @media ${breakpoints.laptop} {
     max-width: 656px;
+  }
+  @media ${breakpoints.desktop} {
+    margin-bottom: 40px;
+    margin-top: 46px;
   }
 `
 export default function Template({ data }) {
