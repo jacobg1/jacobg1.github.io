@@ -42,6 +42,7 @@ const LinkHolder = styled.div `
   :hover {
     opacity: .7;
     box-shadow: none;
+    border-radius: 0;
   }
    
   & a {

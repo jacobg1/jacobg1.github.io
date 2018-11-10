@@ -14,9 +14,16 @@ const HeaderContainer = styled(Card) `
   height: 225px;
   margin: 40px auto 20px auto;
   width: 90%;
-  max-width: 775px;
+  max-width: 393px;
+  
   @media ${breakpoints.tablet} {
-    width: 79%;
+    width: 65%;
+    max-width: 613px;
+  }
+  
+  @media ${breakpoints.laptop} {
+    width: 50%;
+    
   }
 `
 
@@ -24,6 +31,7 @@ const HeaderContentWrapper = styled.div `
   margin: 0 auto;
   max-width: 960px;
   padding: 10px 1.0875rem 17px 1.0875rem;
+
   @media ${breakpoints.tablet} {
     padding-top: 0;
   }
@@ -43,17 +51,20 @@ const HeaderLink = styled(Link) `
   text-align: center;
   line-height: 35px;
   text-shadow: 0 1px 1px rgb(106,80,91);
+
   @media ${breakpoints.mobile} {  
     font-size: 30px;
   }
+
   @media ${breakpoints.laptop} {
     font-size: 35px;
     width: 290px;
+    padding-top: 5px;
   }
 `
 
 const AboutMeWrapper = styled.div `
-  height: 30px;
+  line-height: 30px;
   width: 100px;
   background: #73b2fb;
   display: inline-block;
@@ -61,12 +72,22 @@ const AboutMeWrapper = styled.div `
   margin-top: 25px;
   font-size: 14px;
   font-weight: bold;
+  transition: outline .001s ease-in-out;
+  transition: opacity .3s ease-in-out;
+  transition: box-shadow .3s ease-in-out;
   text-shadow: 0 1px 1px rgb(106,80,91);
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
   @media ${breakpoints.mobile} {
-    height: 35px;
+    line-height: 35px;
     width: 111px;
     font-size: 16px;
+  }
+  :hover {
+    opacity: .7;
+    box-shadow: none;
+    outline: 1px solid #6496d0;
+    line-height: 34px;
   }
 `
 
@@ -74,16 +95,12 @@ const AboutMeLink = styled(Link) `
   color: #ffffff;
   text-decoration: none;
   display: inline-block;
-  padding-top: 5px;
   width: 100%;
-  height: 100%;
-  @media ${breakpoints.mobile} {
-    padding-top: 8px;
-  }
+  height: 100%;    
 `
 
 const ButtonWrapper = styled.div `
-  height: 41px;
+  line-height: 41px;
   width: 160px;
   display: block;
   margin: 0 auto;
@@ -95,16 +112,24 @@ const ButtonWrapper = styled.div `
   border: 1px solid #73b2fb;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   text-shadow: 0 1px 1px rgb(106,80,91);
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+  :hover {
+    opacity: .7;
+    box-shadow: none;
+    line-height: 39.2px;
+    border: 2px solid #6496d0;
+  
+  }
 `
 
 const ContactButton = styled(Link) `
   color: #ffffff;
-  vertical-align: middle;
   text-decoration: none;
   font-weight: bold;
   display: inline-block;
-  padding-top: 9px;
   font-size: 16px;
+
   @media ${breakpoints.mobile} {
     font-size: 17px;
   }
@@ -112,6 +137,7 @@ const ContactButton = styled(Link) `
 
 const Header = ({ siteTitle }) => (
   <HeaderContainer>
+
     <AboutMeWrapper>
       <AboutMeLink to="/space-search/">Projects</AboutMeLink>
     </AboutMeWrapper>
@@ -124,10 +150,13 @@ const Header = ({ siteTitle }) => (
         <HeaderLink to="/">{siteTitle}</HeaderLink>
       </HeaderTitle>
     </HeaderContentWrapper>
+
     <HeroImage />
+
     <ButtonWrapper>
       <ContactButton to="/about/">Contact</ContactButton>
     </ButtonWrapper>
+
   </HeaderContainer>
 )
 
