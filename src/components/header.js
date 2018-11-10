@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import HeroImage from '../components/heroImage'
 import styled from 'styled-components'
 import { breakpoints } from './breakpoints'
+import MobileMenu from '../components/mobileMenu'
 
 const Card = styled.div`
   border-radius: 5px;
@@ -34,6 +35,7 @@ const HeaderContentWrapper = styled.div `
   margin: 0 auto;
   max-width: 960px;
   padding: 10px 1.0875rem 17px 1.0875rem;
+  position: relative;
 
   @media ${breakpoints.mobile} {
     padding-top: 5px;
@@ -43,8 +45,8 @@ const HeaderContentWrapper = styled.div `
   }
 `
 
-const HeaderTitle = styled.h1`
-  margin: 0 auto;
+const HeaderTitle = styled.h1 `
+  margin: 48px auto 0 auto;
 `
 
 const HeaderLink = styled(Link) `
@@ -69,13 +71,13 @@ const HeaderLink = styled(Link) `
   @media ${breakpoints.laptop} {
     font-size: 35px;
     max-width: 290px;
-    padding-top: 5px;
+    padding-top: 50px;
   }
 
   @media ${breakpoints.desktop} {
     font-size: 45px;
     max-width: 409px;
-    padding-top: 5px;
+
     line-height: 45px;
   }
 `
@@ -162,28 +164,31 @@ const ContactButton = styled(Link) `
 `
 
 const Header = ({ siteTitle }) => (
-  <HeaderContainer>
-
-    <AboutMeWrapper>
+  <>
+    <HeaderContainer>
+      
+    {/* <AboutMeWrapper>
       <AboutMeLink to="/space-search/">Projects</AboutMeLink>
-    </AboutMeWrapper>
-        {/* <AboutMeWrapper>
-            <AboutMeLink to="/about/">About Me</AboutMeLink>
+    </AboutMeWrapper> */}
+    
+    
+      <HeaderContentWrapper>
+          <MobileMenu />
 
-        </AboutMeWrapper> */}
-    <HeaderContentWrapper>
-      <HeaderTitle>
-        <HeaderLink to="/">{siteTitle}</HeaderLink>
-      </HeaderTitle>
-    </HeaderContentWrapper>
+        <HeaderTitle>
+          <HeaderLink to="/">{siteTitle}</HeaderLink>
+        </HeaderTitle>
 
-    <HeroImage />
+      </HeaderContentWrapper>
 
-    <ButtonWrapper>
-      <ContactButton to="/about/">Contact</ContactButton>
-    </ButtonWrapper>
+      <HeroImage />
 
-  </HeaderContainer>
+      <ButtonWrapper>
+        <ContactButton to="/about/">Contact</ContactButton>
+      </ButtonWrapper>
+
+    </HeaderContainer>
+  </>
 )
 
 export default Header
