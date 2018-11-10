@@ -20,10 +20,13 @@ const HeaderContainer = styled(Card) `
     width: 65%;
     max-width: 613px;
   }
-  
+
   @media ${breakpoints.laptop} {
     width: 50%;
     
+  }
+  @media ${breakpoints.desktop} {
+    height: 250px;
   }
 `
 
@@ -32,7 +35,10 @@ const HeaderContentWrapper = styled.div `
   max-width: 960px;
   padding: 10px 1.0875rem 17px 1.0875rem;
 
-  @media ${breakpoints.tablet} {
+  @media ${breakpoints.mobile} {
+    padding-top: 5px;
+  }
+  @media ${breakpoints.laptop} {
     padding-top: 0;
   }
 `
@@ -45,12 +51,16 @@ const HeaderLink = styled(Link) `
   color: #f1f1f1;
   text-decoration: none;
   font-size: 26px;
-  width: 265px;
+  max-width: 265px;
   margin: 0 auto;
   display: block;
   text-align: center;
   line-height: 35px;
   text-shadow: 0 1px 1px rgb(106,80,91);
+  
+  @media ${breakpoints.header} {
+    ${'' /* width: 265px; */}
+  }
 
   @media ${breakpoints.mobile} {  
     font-size: 30px;
@@ -58,8 +68,15 @@ const HeaderLink = styled(Link) `
 
   @media ${breakpoints.laptop} {
     font-size: 35px;
-    width: 290px;
+    max-width: 290px;
     padding-top: 5px;
+  }
+
+  @media ${breakpoints.desktop} {
+    font-size: 45px;
+    max-width: 409px;
+    padding-top: 5px;
+    line-height: 45px;
   }
 `
 
@@ -119,7 +136,12 @@ const ButtonWrapper = styled.div `
     box-shadow: none;
     line-height: 39.2px;
     border: 2px solid #6496d0;
-  
+  }
+
+  @media ${breakpoints.desktop} {
+    line-height: 46px;
+    width: 175px;
+    margin-top: 1px;
   }
 `
 
@@ -132,6 +154,10 @@ const ContactButton = styled(Link) `
 
   @media ${breakpoints.mobile} {
     font-size: 17px;
+  }
+
+  @media ${breakpoints.desktop} {
+    font-size: 20px;
   }
 `
 
