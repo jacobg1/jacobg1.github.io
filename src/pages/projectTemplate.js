@@ -13,8 +13,8 @@ const ProjectCard = styled.div`
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   margin: 0 auto 20px auto;
-  width: 90%;
-  max-width: 1000px;
+  width: 70%;
+  max-width: 833px;
   && a {
     text-decoration: none;
     color: #70b0fe;
@@ -31,7 +31,6 @@ const FlexContainer = styled.div`
 `
 const LinkHolder = styled.div `
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  background: #f1f1f1;
   margin-bottom: 20px;
   width: 45%;
   height: 40px;
@@ -39,7 +38,13 @@ const LinkHolder = styled.div `
   position: relative;
   background: #73b2fb;
   border-radius: 30px;
-  && a {
+  transition: all .3s ease-in-out;
+  :hover {
+    opacity: .7;
+    box-shadow: none;
+  }
+   
+  & a {
     text-decoration: none; 
     width: 100%;
     display: inline-block;
@@ -49,9 +54,11 @@ const LinkHolder = styled.div `
     height: 100%;
     padding-top: 10px;
     color: white;
+
     @media ${breakpoints.mobile} {
       font-size: 17px;
     }
+
     @media ${breakpoints.desktop} {
       max-width: 275px;
     }
@@ -71,6 +78,7 @@ const ProjectTitle = styled.h2 `
   text-shadow: 0 1px 1px rgb(106,80,91);
   font-size: 35px;
   margin: 40px 0 15px 0;
+
   @media ${breakpoints.laptop} {
     font-size: 40px;
     margin: 50px 0 45px 0;
@@ -80,6 +88,7 @@ const ProjectTitle = styled.h2 `
 const ProjectHolder = styled.div `
   padding: 10px;
   overflow: auto;
+
   @media ${breakpoints.mobile} {
     padding: 20px 20px 15px 20px;
   }
@@ -87,15 +96,19 @@ const ProjectHolder = styled.div `
     line-height: 23px;
     margin: 0;
     font-size: 16px;
+    color: #0c1d96;
+
     @media ${breakpoints.mobile} {
       font-size: 17px;
       line-height: 25px;
     }
+
     @media ${breakpoints.laptop} {
       font-size: 19px;
       line-height: 30px;
     }
   } 
+  
 `
 const ProjectLink = styled(Link)`
   color: #73b2fb;
@@ -104,9 +117,15 @@ const ProjectLink = styled(Link)`
   font-size: 14px;
   border-bottom: 4px solid;
   padding: 0 2px 4px 2px;
+  transition: color .3s ease-in-out;
+  :hover {
+    color: #000000;
+  }
+
   @media ${breakpoints.mobile} {  
     font-size: 16px;
   }
+
   @media ${breakpoints.laptop} {
     font-size: 18px;
   }
@@ -114,23 +133,28 @@ const ProjectLink = styled(Link)`
 const ProjectIcon = styled(Img)`
   float: right;
 `
+
 const TopIconFlex = styled(FlexContainer) `
   margin-top:0;
   margin-bottom: 20px;
 `
+
 const BottmomIconFlex = styled(FlexContainer)`
   margin-top: 15px;
   margin-bottom: 10px;
   justify-content: center;
 `
+
 const NavFlex = styled(FlexContainer) `
   max-width: 450px;
   margin-top: 33px;
   margin-bottom: 35px;
 `
+
 const ButtonFlex = styled(FlexContainer) `
   margin-bottom: 25px;
   max-width: 550px;
+
   @media ${breakpoints.laptop} {
     max-width: 656px;
   }
@@ -140,26 +164,26 @@ export default function Template({ data }) {
   return (
     <Layout>
       <ProjectTitle>{project.frontmatter.title}</ProjectTitle>
+
       <NavFlex>
         <ProjectLink to="/space-search/" activeStyle={{color: "black"}}>Space Search</ProjectLink>
         <ProjectLink to="/crunchfm/" activeStyle={{ color: "black" }}>CRUNCHfm</ProjectLink>
         <ProjectLink to="/simon-says/" activeStyle={{ color: "black" }}>Simon Says</ProjectLink>
-
       </NavFlex>
+
       <ButtonFlex>
-      <LinkHolder>
-      
-        <a href={project.frontmatter.githubLink} target="_blank">
-        <img src={githubLogo} alt="github logo"></img>
-          Repo
-        </a>
-      </LinkHolder>
-      <LinkHolder>
-        <a href={project.frontmatter.projectLink} target="_blank">
-        <img src={rocketLogo} alt="rocket logo"></img>
-          App
-        </a>
-      </LinkHolder>
+        <LinkHolder>   
+          <a href={project.frontmatter.githubLink} target="_blank">
+          <img src={githubLogo} alt="github logo"></img>
+            Repo
+          </a>
+        </LinkHolder>
+        <LinkHolder>
+          <a href={project.frontmatter.projectLink} target="_blank">
+          <img src={rocketLogo} alt="rocket logo"></img>
+            App
+          </a>
+        </LinkHolder>
       </ButtonFlex>
       <ProjectCard>
         <ProjectHolder>
@@ -184,9 +208,7 @@ export default function Template({ data }) {
             {/* <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} /> */}
           </BottmomIconFlex>
         </ProjectHolder>
-
       </ProjectCard>
-     
     </Layout>
   );
 }
