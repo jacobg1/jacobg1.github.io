@@ -39,7 +39,10 @@ const HeaderContentWrapper = styled.div `
 
   @media ${breakpoints.mobile} {
     padding-top: 5px;
+    padding-bottom: 25px;
   }
+
+
   @media ${breakpoints.laptop} {
     padding-top: 0;
   }
@@ -71,11 +74,11 @@ const HeaderLink = styled(Link) `
   @media ${breakpoints.laptop} {
     font-size: 35px;
     max-width: 290px;
-    padding-top: 50px;
+    padding-top: 55px;
   }
 
   @media ${breakpoints.desktop} {
-    font-size: 45px;
+    font-size: 42px;
     max-width: 409px;
 
     line-height: 45px;
@@ -115,8 +118,10 @@ const AboutMeLink = styled(Link) `
   text-decoration: none;
   display: inline-block;
   width: 100%;
-  height: 100%;    
+  height: 100%;  
+  
 `
+
 
 const ButtonWrapper = styled.div `
   line-height: 41px;
@@ -164,9 +169,10 @@ const ContactButton = styled(Link) `
 `
 
 const Header = ({ siteTitle }) => (
-  <>
+  
+  <> 
     <HeaderContainer>
-      
+     
     {/* <AboutMeWrapper>
       <AboutMeLink to="/space-search/">Projects</AboutMeLink>
     </AboutMeWrapper> */}
@@ -184,7 +190,7 @@ const Header = ({ siteTitle }) => (
       <HeroImage />
 
       <ButtonWrapper>
-        <ContactButton to="/about/">Contact</ContactButton>
+        <ContactButton to="/space-search/">Projects</ContactButton>
       </ButtonWrapper>
 
     </HeaderContainer>
