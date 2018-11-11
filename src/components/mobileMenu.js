@@ -12,9 +12,23 @@ const MobileModal = styled.div `
     top: 0;
     height: 225px;
     width: 100%;
+    padding-top: 20px;
 
     @media ${breakpoints.desktop} {
       height: 250px;
+    }
+
+    & a {
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: 500;
+      padding: 9px 0;
+      display: block;
+      width: 41%;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+      text-shadow: 0 1px 1px rgb(106,80,91)
     }
 `
 const MobileMenuContainer = styled.div `
@@ -23,41 +37,89 @@ const MobileMenuContainer = styled.div `
     left: 15px;
     top: 15px;
     z-index: 1;
+    cursor: pointer;
 
     & span {
         width: 35px;
         display: block;
         border-bottom: 6px solid #f1f1f1;
         box-shadow: 0px 3px #78b4f9;
-        padding-bottom: 4px;
+        padding-bottom: 4px;  
     }
+    & span.rotateUp {
+        transform: rotate(45deg);
+        position: absolute;
+        top: 8px;
+        width: 40px;
+    }
+    & span.rotateDown {
+        transform: rotate(-45deg);
+        position: absolute;
+        top: 8px;
+        width: 40px;
+        left: -4px;
+    }
+    & span.disappear {
+        display: none;
+    } 
 `
 class MobileMenu extends Component {
+    
     constructor(props) {
         super(props);
         this.state = { 
-            showMenu: false 
+            showMenu: false,
+            rotate: false 
         };
+        
         this.openMenu = () => this.setState(prevState => ({
-            showMenu: !prevState.showMenu
-        }))
+            showMenu: !prevState.showMenu,
+            rotate: !prevState.rotate
+        }), function () {
+            if(this.state.showMenu) {
+                localStorage.setItem('open', '1')
+            } else {
+                localStorage.setItem('open', '2')
+            }
+        })
+        
     }
-    
+    componentDidMount () {
+        let checkOpen = localStorage.getItem('open')
+
+        if(checkOpen === '1') {
+
+            this.setState({ 
+                showMenu: true,
+                rotate: true
+            })
+
+        } else {
+            this.setState({ 
+                showMenu: false,
+                rotate: false
+            })
+        }
+    }
     render () {
+        
         const menu = (
             <MobileModal>
-                <p>test</p>
+                <Link to="#">Resume</Link>
+                <Link to="/space-search">Projects</Link>
+                <Link to="#">GitHub</Link>
+                <Link to="#">Contact</Link>
             </MobileModal>
         )
         return (
-            <>
+          <>
             <MobileMenuContainer onClick={this.openMenu}>
-                <span></span>
-                <span></span>
-                <span></span>   
+                <span className={ this.state.rotate ? "rotateUp" : "" }></span>
+                <span className={ this.state.rotate ? "disappear" : "" }></span>
+                <span className={ this.state.rotate ? "rotateDown" : "" }></span>   
             </MobileMenuContainer>
             { this.state.showMenu ? menu : '' }
-            </>
+          </>
         )
     }
 }
