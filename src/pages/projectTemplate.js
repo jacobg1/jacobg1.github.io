@@ -61,7 +61,6 @@ const LinkHolder = styled.div `
     font-size: 15px;
     font-weight: bold;
     height: 100%;
-    ${'' /* padding-top: 10px; */}
     color: white;
 
     @media ${breakpoints.mobile} {
@@ -93,11 +92,12 @@ const ProjectTitle = styled.h2 `
   text-align: center;
   text-shadow: 0 1px 1px rgb(106,80,91);
   font-size: 35px;
-  margin: 40px 0 15px 0;
+  margin: 30px 0 15px 0;
+  display: inline-block;
 
   @media ${breakpoints.laptop} {
     font-size: 40px;
-    margin: 50px 0 45px 0;
+    margin: 40px 0 30px 0;
   }
 
   @media ${breakpoints.desktop} {
@@ -160,7 +160,8 @@ const ProjectLink = styled(Link)`
   }
 `
 const ProjectIcon = styled(Img)`
-  float: right;
+  vertical-align: sub;
+  margin-left: 17px;
 `
 
 const TopIconFlex = styled(FlexContainer) `
@@ -176,8 +177,9 @@ const BottmomIconFlex = styled(FlexContainer)`
 
 const NavFlex = styled(FlexContainer) `
   max-width: 450px;
-  margin-top: 33px;
+  margin-top: 20px;
   margin-bottom: 35px;
+  width: 93%;
 
   @media ${breakpoints.desktop} {
     max-width: 525px
@@ -197,15 +199,21 @@ const ButtonFlex = styled(FlexContainer) `
   }
 `
 export default function Template({ data }) {
+
   const project = data.markdownRemark
+  
   return (
     <Layout>
-      <ProjectTitle>{project.frontmatter.title}</ProjectTitle>
+
+      <div style={{textAlign: "center"}}>
+        <ProjectTitle>{project.frontmatter.title}</ProjectTitle>
+        <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
+      </div>
 
       <NavFlex>
         <ProjectLink to="/space-search/" activeStyle={{color: "black"}}>Space Search</ProjectLink>
         <ProjectLink to="/crunchfm/" activeStyle={{ color: "black" }}>CRUNCHfm</ProjectLink>
-        <ProjectLink to="/simon-says/" activeStyle={{ color: "black" }}>Simon Says</ProjectLink>
+        <ProjectLink to="/simon-game/" activeStyle={{ color: "black" }}>Simon Game</ProjectLink>
       </NavFlex>
 
       <ButtonFlex>
@@ -224,26 +232,12 @@ export default function Template({ data }) {
       </ButtonFlex>
       <ProjectCard>
         <ProjectHolder>
-          {/* <TopIconFlex>
-            <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
 
-          <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
-          <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
-          <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
-          <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
-          </TopIconFlex> */}
         <div
           className="project-content"
           dangerouslySetInnerHTML={{ __html: project.html }}
         />
-          <BottmomIconFlex>
-            <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} />
-          
-            {/* <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} /> */}
-            {/* <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} /> */}
-            {/* <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} /> */}
-            {/* <ProjectIcon fixed={project.frontmatter.cover_image.childImageSharp.fixed} /> */}
-          </BottmomIconFlex>
+
         </ProjectHolder>
       </ProjectCard>
     </Layout>
