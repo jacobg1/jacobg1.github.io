@@ -11,7 +11,6 @@ import styled from 'styled-components'
 
 const SiteContainer = styled.div `
     margin: 0 auto;
-    ${'' /* max-width: 960px; */}
     padding-top: 0;
     padding-bottom: 40px;
 `
@@ -53,3 +52,4 @@ Layout.propTypes = {
 }
 
 export default Layout
+
