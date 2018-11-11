@@ -45,6 +45,11 @@ const HeaderContentWrapper = styled.div `
 
   @media ${breakpoints.laptop} {
     padding-top: 0;
+    padding-bottom: 29px;
+  }
+
+  @media ${breakpoints.desktop} {
+    padding-bottom: 22px;
   }
 `
 

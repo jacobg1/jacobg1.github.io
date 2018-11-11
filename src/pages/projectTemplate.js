@@ -44,9 +44,11 @@ const LinkHolder = styled.div `
   border-radius: 30px;
   transition: all .3s ease-in-out;
   :hover {
-    opacity: .7;
-    box-shadow: none;
-    border-radius: 0;
+    @media ${breakpoints.laptop} {
+      opacity: .7;
+      box-shadow: none;
+      border-radius: 0;
+    }
   }
 
   @media ${breakpoints.desktop} {
