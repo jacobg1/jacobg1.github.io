@@ -1,12 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import {Link} from 'gatsby'
+import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import styled from 'styled-components'
 import { breakpoints } from '../components/breakpoints';
 
 const ContentCard = styled.div `
-  ${'' /* max-width: 295px; */}
   padding: 15px;
   width: 91%;
   margin: 43px auto;
@@ -116,7 +115,7 @@ const Shapes = styled.div`
 const Circle = styled(Shapes)`
   background-color: #6692f9;
   border-radius: 100%;
-  
+
   @media ${breakpoints.laptop} {
     left: -6px;
     width: 14px;
@@ -126,11 +125,6 @@ const Circle = styled(Shapes)`
 const Square = styled(Shapes)`
   border-radius: 0;
   background-color: #79cffe;
-   ${'' /* @media ${breakpoints.laptop} {
-    
-    width: 15px;
-    height: 15px;
-  } */}
 `
 const Triangle = styled(Shapes)`
   position: absolute;
