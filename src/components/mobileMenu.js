@@ -112,14 +112,14 @@ class MobileMenu extends Component {
             </MobileModal>
         )
         return (
-          <>
+          <React.Fragment>
             <MobileMenuContainer onClick={this.openMenu}>
                 <span className={ this.state.rotate ? "rotateUp" : "" }></span>
                 <span className={ this.state.rotate ? "disappear" : "" }></span>
                 <span className={ this.state.rotate ? "rotateDown" : "" }></span>   
             </MobileMenuContainer>
             { this.state.showMenu ? menu : '' }
-          </>
+          </React.Fragment>
         )
     }
 }

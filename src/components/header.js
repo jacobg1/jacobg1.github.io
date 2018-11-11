@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import HeroImage from '../components/heroImage'
 import styled from 'styled-components'
@@ -90,42 +91,42 @@ const HeaderLink = styled(Link) `
   }
 `
 
-const AboutMeWrapper = styled.div `
-  line-height: 30px;
-  width: 100px;
-  background: #73b2fb;
-  display: inline-block;
-  text-align: center;
-  margin-top: 25px;
-  font-size: 14px;
-  font-weight: bold;
-  transition: outline .001s ease-in-out;
-  transition: opacity .3s ease-in-out;
-  transition: box-shadow .3s ease-in-out;
-  text-shadow: 0 1px 1px rgb(106,80,91);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+// const AboutMeWrapper = styled.div `
+//   line-height: 30px;
+//   width: 100px;
+//   background: #73b2fb;
+//   display: inline-block;
+//   text-align: center;
+//   margin-top: 25px;
+//   font-size: 14px;
+//   font-weight: bold;
+//   transition: outline .001s ease-in-out;
+//   transition: opacity .3s ease-in-out;
+//   transition: box-shadow .3s ease-in-out;
+//   text-shadow: 0 1px 1px rgb(106,80,91);
+//   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
-  @media ${breakpoints.mobile} {
-    line-height: 35px;
-    width: 111px;
-    font-size: 16px;
-  }
-  :hover {
-    opacity: .7;
-    box-shadow: none;
-    outline: 1px solid #6496d0;
-    line-height: 34px;
-  }
-`
+//   @media ${breakpoints.mobile} {
+//     line-height: 35px;
+//     width: 111px;
+//     font-size: 16px;
+//   }
+//   :hover {
+//     opacity: .7;
+//     box-shadow: none;
+//     outline: 1px solid #6496d0;
+//     line-height: 34px;
+//   }
+// `
 
-const AboutMeLink = styled(Link) `
-  color: #ffffff;
-  text-decoration: none;
-  display: inline-block;
-  width: 100%;
-  height: 100%;  
+// const AboutMeLink = styled(Link) `
+//   color: #ffffff;
+//   text-decoration: none;
+//   display: inline-block;
+//   width: 100%;
+//   height: 100%;  
   
-`
+// `
 
 
 const ButtonWrapper = styled.div `
@@ -175,7 +176,7 @@ const ContactButton = styled(Link) `
 
 const Header = ({ siteTitle }) => (
   
-  <> 
+  <React.Fragment> 
     <HeaderContainer>
      
     {/* <AboutMeWrapper>
@@ -199,7 +200,11 @@ const Header = ({ siteTitle }) => (
       </ButtonWrapper>
 
     </HeaderContainer>
-  </>
+  </React.Fragment>
 )
+
+Header.propTypes = {
+  siteTitle: PropTypes.string.isRequired
+}
 
 export default Header

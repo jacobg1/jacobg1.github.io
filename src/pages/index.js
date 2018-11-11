@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import styled from 'styled-components'
 import { breakpoints } from '../components/breakpoints';
@@ -29,22 +29,22 @@ const BodyContainer = styled.div `
   margin: 0 auto;
 `
 
-const StyledLink = styled(Link)`
-  color: #ffffff;
-`
-const LinkContainer = styled.div`
-  height: 41px;
-  width: 160px;
-  display: block;
-  margin: 40px auto 0 auto;
-  text-align: center;
-  border-radius: 30px;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.75);
-  outline: none;
-  border-radius: 30px;
-  border: 1px solid #4c0300;
-  box-shadow: inset 1px 1px 0px rgba(255,255,255,0.25), inset 0 0 6px #d2d5ff, inset 0 80px 58px -13px #d2d5ff, 1px 1px 1px rgba(0,0,0,0.75);
-`
+// const StyledLink = styled(Link)`
+//   color: #ffffff;
+// `
+// const LinkContainer = styled.div`
+//   height: 41px;
+//   width: 160px;
+//   display: block;
+//   margin: 40px auto 0 auto;
+//   text-align: center;
+//   border-radius: 30px;
+//   text-shadow: 0 1px 2px rgba(0,0,0,0.75);
+//   outline: none;
+//   border-radius: 30px;
+//   border: 1px solid #4c0300;
+//   box-shadow: inset 1px 1px 0px rgba(255,255,255,0.25), inset 0 0 6px #d2d5ff, inset 0 80px 58px -13px #d2d5ff, 1px 1px 1px rgba(0,0,0,0.75);
+// `
 const Statement = styled.p `
   margin: 0;
   font-size: 15px;

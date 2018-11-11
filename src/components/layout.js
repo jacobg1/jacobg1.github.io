@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
@@ -27,7 +25,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <> 
+      <React.Fragment> 
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
@@ -42,7 +40,7 @@ const Layout = ({ children }) => (
 
         <SiteContainer>{children}</SiteContainer>
         <Footer email={data.site.siteMetadata.email} />
-      </>
+      </React.Fragment>
     )}
   />
 )

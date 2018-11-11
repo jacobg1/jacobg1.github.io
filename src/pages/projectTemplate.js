@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import styled from 'styled-components'
@@ -166,16 +167,16 @@ const ProjectIcon = styled(Img)`
   margin-left: 17px;
 `
 
-const TopIconFlex = styled(FlexContainer) `
-  margin-top:0;
-  margin-bottom: 20px;
-`
+// const TopIconFlex = styled(FlexContainer) `
+//   margin-top:0;
+//   margin-bottom: 20px;
+// `
 
-const BottmomIconFlex = styled(FlexContainer)`
-  margin-top: 15px;
-  margin-bottom: 10px;
-  justify-content: center;
-`
+// const BottmomIconFlex = styled(FlexContainer)`
+//   margin-top: 15px;
+//   margin-bottom: 10px;
+//   justify-content: center;
+// `
 
 const NavFlex = styled(FlexContainer) `
   max-width: 450px;
@@ -220,13 +221,13 @@ export default function Template({ data }) {
 
       <ButtonFlex>
         <LinkHolder>   
-          <a href={project.frontmatter.githubLink} target="_blank">
+          <a href={project.frontmatter.githubLink} rel="noopener noreferrer" target="_blank">
           <img src={githubLogo} alt="github logo"></img>
             Repo
           </a>
         </LinkHolder>
         <LinkHolder>
-          <a href={project.frontmatter.projectLink} target="_blank">
+          <a href={project.frontmatter.projectLink} rel="noopener noreferrer" target="_blank">
           <img src={rocketLogo} alt="rocket logo"></img>
             App
           </a>
@@ -245,6 +246,22 @@ export default function Template({ data }) {
     </Layout>
   );
 }
+
+Template.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      html: PropTypes.isRequired,
+      frontmatter: PropTypes.shape({
+        path: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        githubLink: PropTypes.string.isRequired,
+        projectLink: PropTypes.string.isRequired,
+        cover_image: PropTypes.isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+}
+
 export const pageQuery = graphql`
   query ProjectByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
