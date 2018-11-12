@@ -45,10 +45,10 @@ const LinkHolder = styled.div `
   border-radius: 30px;
   transition: all .3s ease-in-out;
   :hover {
-    @media ${breakpoints.laptop} {
+    @media ${breakpoints.tablet} {
       opacity: .7;
       box-shadow: none;
-      border-radius: 0;
+      ${'' /* border-radius: 0; */}
     }
   }
 
@@ -95,12 +95,12 @@ const ProjectTitle = styled.h2 `
   text-align: center;
   text-shadow: 0 1px 1px rgb(106,80,91);
   font-size: 35px;
-  margin: 30px 0 15px 0;
+  margin: 55px 0 15px 0;
   display: inline-block;
 
   @media ${breakpoints.laptop} {
     font-size: 40px;
-    margin: 40px 0 30px 0;
+    margin: 90px 0 30px 0;
   }
 
   @media ${breakpoints.desktop} {
