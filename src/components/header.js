@@ -8,23 +8,25 @@ import MobileMenu from '../components/mobileMenu'
 
 const Card = styled.div`
   border-radius: 5px;
-  background: linear-gradient(135deg,rgb(235,229,231) 0%,rgb(115, 178, 251) 24%,rgb(121,206,253) 50%,rgb(115,178,251) 70%,rgb(235,229,231) 100%);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  ${'' /* background: linear-gradient(135deg,rgb(235,229,231) 0%,rgb(115, 178, 251) 24%,rgb(121,206,253) 50%,rgb(115,178,251) 70%,rgb(235,229,231) 100%); */}
+  ${'' /* box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */}
+  ${'' /* background: #73b2fb; */}
 `
 
 const HeaderContainer = styled(Card) `
   height: 225px;
-  margin: 40px auto 20px auto;
-  width: 90%;
-  max-width: 393px;
+  ${'' /* margin: 40px auto 20px auto; */}
+  ${'' /* width: 90%;
+  max-width: 393px; */}
+  margin: 0 auto;
   
   @media ${breakpoints.tablet} {
-    width: 65%;
-    max-width: 613px;
+    ${'' /* width: 65%;
+    max-width: 613px; */}
   }
 
   @media ${breakpoints.laptop} {
-    width: 50%;
+    ${'' /* width: 50%; */}
     
   }
   @media ${breakpoints.desktop} {
@@ -33,29 +35,31 @@ const HeaderContainer = styled(Card) `
 `
 
 const HeaderContentWrapper = styled.div `
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 10px 1.0875rem 17px 1.0875rem;
+  ${'' /* margin: 0 auto; */}
+  ${'' /* max-width: 960px;
+  padding: 10px 1.0875rem 17px 1.0875rem; */}
   position: relative;
 
   @media ${breakpoints.mobile} {
     padding-top: 5px;
-    padding-bottom: 25px;
+    ${'' /* padding-bottom: 25px; */}
   }
 
 
   @media ${breakpoints.laptop} {
-    padding-top: 0;
-    padding-bottom: 29px;
+    ${'' /* padding-top: 0;
+    padding-bottom: 29px; */}
+    padding-top: 13px;
+    padding-bottom: 0;
   }
 
   @media ${breakpoints.desktop} {
-    padding-bottom: 22px;
+    ${'' /* padding-bottom: 22px; */}
   }
 `
 
 const HeaderTitle = styled.h1 `
-  margin: 48px auto 0 auto;
+  ${'' /* margin: 48px auto 0 auto; */}
 `
 
 const HeaderLink = styled(Link) `
@@ -63,6 +67,7 @@ const HeaderLink = styled(Link) `
   text-decoration: none;
   font-size: 26px;
   max-width: 265px;
+  padding-top: 70px;
   margin: 0 auto;
   display: block;
   text-align: center;
@@ -75,19 +80,20 @@ const HeaderLink = styled(Link) `
 
   @media ${breakpoints.mobile} {  
     font-size: 30px;
+    padding-top: 60px;
   }
 
   @media ${breakpoints.laptop} {
     font-size: 35px;
     max-width: 290px;
-    padding-top: 55px;
+    padding-top: 95px;
+    line-height: 46px;
   }
 
   @media ${breakpoints.desktop} {
     font-size: 42px;
     max-width: 409px;
-
-    line-height: 45px;
+    line-height: 50px;
   }
 `
 
@@ -151,10 +157,11 @@ const ButtonWrapper = styled.div `
     border: 2px solid #6496d0;
   }
 
-  @media ${breakpoints.desktop} {
-    line-height: 46px;
+  @media ${breakpoints.laptop} {
+    display: none;
+    ${'' /* line-height: 46px;
     width: 175px;
-    margin-top: 1px;
+    margin-top: 1px; */}
   }
 `
 
@@ -162,7 +169,7 @@ const ContactButton = styled(Link) `
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
-  display: inline-block;
+  display: block;
   font-size: 16px;
 
   @media ${breakpoints.mobile} {
