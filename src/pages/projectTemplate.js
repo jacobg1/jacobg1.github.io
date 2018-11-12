@@ -38,16 +38,18 @@ const LinkHolder = styled.div `
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   margin-bottom: 20px;
   width: 45%;
-  line-height: 40px;
+  line-height: 37px;
   text-align: center;
   position: relative;
   background: #73b2fb;
   border-radius: 30px;
+  border: 3px solid #73b2fb;
   transition: all .3s ease-in-out;
   :hover {
     @media ${breakpoints.tablet} {
       opacity: .7;
       box-shadow: none;
+      background: #ef6060;
       ${'' /* border-radius: 0; */}
     }
   }

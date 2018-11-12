@@ -151,10 +151,11 @@ const ButtonWrapper = styled.div `
   transition: all .3s ease-in-out;
   cursor: pointer;
   :hover {
-    opacity: .7;
+        background: #ef6060;
+    ${'' /* opacity: .7;
     box-shadow: none;
     line-height: 39.2px;
-    border: 2px solid #6496d0;
+    border: 2px solid #6496d0; */}
   }
 
   @media ${breakpoints.laptop} {
