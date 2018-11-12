@@ -112,21 +112,21 @@ const MenuButton = styled.div `
     display: inline-block;
     margin-left: 25px;
     border-radius: 30px;
+    border: 2px solid #73b2fb;
     background: #70b0fe;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    transition: background .3s ease-in-out;
+    transition: all .3s ease-in-out;
     :hover {
-            background: #ef6060;
-
-           
+        background: #ef6060;
+        box-shadow: none;
     }
 `
 
 var links = [
     { text: 'Projects', href: '/space-search/' },
+    { text: 'Contact', href: '/contact/' },
     { text: 'Resume', href: '#' },
     { text: 'Github', href: 'https://github.com/jacobg1' },
-    { text: 'Contact', href: '#' }
 ]
 
 class MobileMenu extends Component {
@@ -190,8 +190,18 @@ class MobileMenu extends Component {
                     >
                       { link.text }  
                     </a> 
-                    : link.text === 'Projects' && this.props.location !== '/'
+                    : link.text === 'Projects' 
+                      && this.props.location !== '/' 
+                      && this.props.location !== '/contact/'
+
                     ? <Link key={ index } to="/">Home</Link>
+
+                    : link.text === 'Contact' 
+                      && this.props.location !== '/' 
+                      && this.props.location === '/contact/'
+
+                    ? <Link key={index} to="/">Home</Link>
+
                     : <Link key={ index } to={ link.href }>
                         { link.text }
                       </Link>
@@ -222,7 +232,16 @@ class MobileMenu extends Component {
                     </a> 
                     </MenuButton>
 
-                    : link.text === 'Projects' && this.props.location !== '/'
+                    : link.text === 'Projects' 
+                      && this.props.location !== '/' 
+                      && this.props.location !== '/contact/'
+
+                    ? <MenuButton key={ index }>
+                        <Link to="/">Home</Link>
+                    </MenuButton>
+
+                    : link.text === 'Contact' 
+                      && this.props.location === '/contact/' 
 
                     ? <MenuButton key={ index }>
                         <Link to="/">Home</Link>
