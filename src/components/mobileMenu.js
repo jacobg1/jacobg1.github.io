@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { breakpoints } from './breakpoints'
@@ -13,13 +14,14 @@ const MobileModal = styled.div `
     height: 246px;
     width: 100%;
     padding-top: 43px;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
-    @media ${breakpoints.tablet} {
+    @media ${breakpoints.specialHeader} {
         width: 200px;
     }
-    @media ${breakpoints.desktop} {
-      height: 250px;
+    @media ${breakpoints.laptop} {
+      ${'' /* height: 250px; */}
+      display: none;
     }
 
     & a {
@@ -109,8 +111,8 @@ const MenuButton = styled.div `
 `
 
 var links = [
-    { text: 'Resume', href: '#' },
     { text: 'Projects', href: '/space-search/' },
+    { text: 'Resume', href: '#' },
     { text: 'Github', href: 'https://github.com/jacobg1' },
     { text: 'Contact', href: '#' }
 ]
@@ -168,6 +170,8 @@ class MobileMenu extends Component {
                     >
                       { link.text }  
                     </a> 
+                    : link.text === 'Projects' && this.props.location !== '/'
+                    ? <Link key={ index } to="/">Home</Link>
                     : <Link key={ index } to={ link.href }>
                         { link.text }
                       </Link>
@@ -198,12 +202,18 @@ class MobileMenu extends Component {
                     </a> 
                     </MenuButton>
 
+                    : link.text === 'Projects' && this.props.location !== '/'
+
+                    ? <MenuButton key={ index }>
+                        <Link to="/">Home</Link>
+                    </MenuButton>
+
                     : <MenuButton key={ index }>
                         <Link to={ link.href }>{ link.text }</Link>
                     </MenuButton>
                 ))
             }
-            
+        
             </DesktopMenu>
 
           </React.Fragment>
@@ -212,3 +222,7 @@ class MobileMenu extends Component {
 }
 
 export default MobileMenu
+
+MobileMenu.propTypes = {
+    location: PropTypes.string.isRequired
+}
