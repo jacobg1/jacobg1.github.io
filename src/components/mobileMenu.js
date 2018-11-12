@@ -4,23 +4,27 @@ import styled from 'styled-components'
 import { breakpoints } from './breakpoints'
 
 const MobileModal = styled.div `
-    border-radius: 5px;
+    ${'' /* border-radius: 5px; */}
     background: linear-gradient(135deg,rgb(235,229,231) 0%,rgb(115, 178, 251) 24%,rgb(121,206,253) 50%,rgb(115,178,251) 70%,rgb(235,229,231) 100%);
     position: absolute;
-    left: 50%;                
-    transform: translateX(-50%);
+    ${'' /* left: 50%;                
+    transform: translateX(-50%); */}
     top: 0;
-    height: 225px;
+    height: 246px;
     width: 100%;
-    padding-top: 20px;
+    padding-top: 43px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
+    @media ${breakpoints.tablet} {
+        width: 200px;
+    }
     @media ${breakpoints.desktop} {
       height: 250px;
     }
 
     & a {
       text-decoration: none;
-      font-size: 24px;
+      font-size: 21px;
       font-weight: 500;
       padding: 9px 0;
       display: block;
@@ -47,6 +51,7 @@ const MobileMenuContainer = styled.div `
         border-bottom: 6px solid #f1f1f1;
         box-shadow: 0px 3px #78b4f9;
         padding-bottom: 4px;  
+        transition: all .3s ease-in-out;
     }
     & span.rotateUp {
         transform: rotate(45deg);
@@ -70,27 +75,45 @@ const DesktopMenu = styled.div `
     display: none;
 
     @media ${breakpoints.laptop} {
-        display: inline-block;
+        display: block;
         float: right;
-        padding-right: 50px;
-        padding-top: 17px;
+        padding-right: 35px;
+        padding-top: 30px;
+        
     }
 
     & a {
         color: white;
+        display: block;
         text-decoration: none;
-        font-size: 18px;
+        font-size: 15px;
         text-shadow: 0 1px 1px rgb(41, 35, 37);
-        padding: 10px;
         font-weight: bold;
+         padding: 5px 19px 7px 19px;
+        
     }
 `
 
 const MenuButton = styled.div `
     display: inline-block;
-    margin-left: 33px;
-    background: blue;
+    margin-left: 25px;
+    border-radius: 30px;
+    background: #70b0fe;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: background .3s ease-in-out;
+    :hover {
+            background: #ef6060;
+
+           
+    }
 `
+
+var links = [
+    { text: 'Resume', href: '#' },
+    { text: 'Projects', href: '/space-search/' },
+    { text: 'Github', href: 'https://github.com/jacobg1' },
+    { text: 'Contact', href: '#' }
+]
 
 class MobileMenu extends Component {
     
@@ -134,15 +157,27 @@ class MobileMenu extends Component {
         
         const menu = (
             <MobileModal>
-                <Link to="#">Resume</Link>
-                <Link to="/space-search">Projects</Link>
-                <Link to="#">GitHub</Link>
-                <Link to="#">Contact</Link>
+            {
+                links.map((link, index) => (
+                    link.text === 'github' ? 
+                    <a 
+                      key={ index }
+                      href={ link.href }
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      { link.text }  
+                    </a> 
+                    : <Link key={ index } to={ link.href }>
+                        { link.text }
+                      </Link>
+                ))
+            }
             </MobileModal>
         )
         return (
           <React.Fragment>
-            <MobileMenuContainer onClick={this.openMenu}>
+            <MobileMenuContainer onClick={ this.openMenu }>
                 <span className={ this.state.rotate ? "rotateUp" : "" }></span>
                 <span className={ this.state.rotate ? "disappear" : "" }></span>
                 <span className={ this.state.rotate ? "rotateDown" : "" }></span>   
@@ -150,24 +185,25 @@ class MobileMenu extends Component {
             { this.state.showMenu ? menu : '' }
 
             <DesktopMenu>
-                <MenuButton>
-                        <Link to="#">Resume</Link>
-
-                </MenuButton>
-                    <MenuButton>
-                        <Link to="/space-search">Projects</Link>
-
+            {
+                links.map((link, index) => (
+                  link.text === 'github' ?
+                      <MenuButton key={ index }>
+                    <a
+                      href={ link.href }
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      { link.text }
+                    </a> 
                     </MenuButton>
 
-                <MenuButton>
-                    <Link to="#">GitHub</Link>
-                </MenuButton>
-
-                
-                <MenuButton>
-                    <Link to="#">Contact</Link>
-                </MenuButton>
-
+                    : <MenuButton key={ index }>
+                        <Link to={ link.href }>{ link.text }</Link>
+                    </MenuButton>
+                ))
+            }
+            
             </DesktopMenu>
 
           </React.Fragment>
