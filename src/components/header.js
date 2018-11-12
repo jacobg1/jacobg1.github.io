@@ -181,7 +181,7 @@ const ContactButton = styled(Link) `
   }
 `
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, location }) => (
   
   <React.Fragment> 
     <HeaderContainer>
@@ -192,7 +192,7 @@ const Header = ({ siteTitle }) => (
     
     
       <HeaderContentWrapper>
-          <MobileMenu />
+        <MobileMenu location={location} />
 
         <HeaderTitle>
           <HeaderLink to="/">{siteTitle}</HeaderLink>
@@ -203,7 +203,12 @@ const Header = ({ siteTitle }) => (
       <HeroImage />
 
       <ButtonWrapper>
-        <ContactButton to="/space-search/">Projects</ContactButton>
+      {
+        location !== '/' 
+        ? <ContactButton to="/">Home</ContactButton>
+        : <ContactButton to="/space-search/">Projects</ContactButton>
+      }
+        
       </ButtonWrapper>
 
     </HeaderContainer>
@@ -211,7 +216,8 @@ const Header = ({ siteTitle }) => (
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string.isRequired
+  siteTitle: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired
 }
 
 export default Header

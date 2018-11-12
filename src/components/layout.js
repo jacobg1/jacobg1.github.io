@@ -36,7 +36,7 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
 
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={data.site.siteMetadata.title} location={location.pathname} />
 
         <SiteContainer>{children}</SiteContainer>
         <Footer email={data.site.siteMetadata.email} />
