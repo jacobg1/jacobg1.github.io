@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { breakpoints } from './breakpoints'
@@ -48,4 +49,9 @@ const Footer = ({ email }) => (
     </FooterContainer>
 )
 
+Footer.propTypes = {
+    email: PropTypes.string.isRequired
+}
+
 export default Footer
+
