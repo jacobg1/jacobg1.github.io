@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
@@ -19,6 +20,7 @@ const HeroImage = ({ data }) => (
 )
 
 
+// eslint-disable-next-line react/display-name
 export default props => (
     <StaticQuery
         query={graphql`
@@ -35,3 +37,13 @@ export default props => (
          render={data => <HeroImage data={data} {...props} />}
     />
 )
+
+HeroImage.propTypes = {
+  data: PropTypes.shape({
+    backgroundImage: PropTypes.shape({
+      childImageSharp: PropTypes.shape({
+        sizes: PropTypes.object.isRequired
+      }).isRequired
+    }).isRequired
+  }).isRequired
+}
