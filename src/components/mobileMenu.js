@@ -38,7 +38,9 @@ const MobileMenuContainer = styled.div `
     top: 15px;
     z-index: 1;
     cursor: pointer;
-
+    @media ${breakpoints.laptop} {
+        display: none;
+    }
     & span {
         width: 35px;
         display: block;
@@ -63,6 +65,33 @@ const MobileMenuContainer = styled.div `
         display: none;
     } 
 `
+
+const DesktopMenu = styled.div `
+    display: none;
+
+    @media ${breakpoints.laptop} {
+        display: inline-block;
+        float: right;
+        padding-right: 50px;
+        padding-top: 17px;
+    }
+
+    & a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        text-shadow: 0 1px 1px rgb(41, 35, 37);
+        padding: 10px;
+        font-weight: bold;
+    }
+`
+
+const MenuButton = styled.div `
+    display: inline-block;
+    margin-left: 33px;
+    background: blue;
+`
+
 class MobileMenu extends Component {
     
     constructor(props) {
@@ -119,6 +148,28 @@ class MobileMenu extends Component {
                 <span className={ this.state.rotate ? "rotateDown" : "" }></span>   
             </MobileMenuContainer>
             { this.state.showMenu ? menu : '' }
+
+            <DesktopMenu>
+                <MenuButton>
+                        <Link to="#">Resume</Link>
+
+                </MenuButton>
+                    <MenuButton>
+                        <Link to="/space-search">Projects</Link>
+
+                    </MenuButton>
+
+                <MenuButton>
+                    <Link to="#">GitHub</Link>
+                </MenuButton>
+
+                
+                <MenuButton>
+                    <Link to="#">Contact</Link>
+                </MenuButton>
+
+            </DesktopMenu>
+
           </React.Fragment>
         )
     }
