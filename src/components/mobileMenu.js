@@ -161,7 +161,7 @@ class MobileMenu extends Component {
             <MobileModal>
             {
                 links.map((link, index) => (
-                    link.text === 'github' ? 
+                    link.text === 'Github' ? 
                     <a 
                       key={ index }
                       href={ link.href }
@@ -191,7 +191,7 @@ class MobileMenu extends Component {
             <DesktopMenu>
             {
                 links.map((link, index) => (
-                  link.text === 'github' ?
+                  link.text === 'Github' ?
                       <MenuButton key={ index }>
                     <a
                       href={ link.href }
