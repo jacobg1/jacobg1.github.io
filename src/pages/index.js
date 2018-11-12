@@ -8,7 +8,7 @@ import { breakpoints } from '../components/breakpoints';
 const ContentCard = styled.div `
   padding: 15px;
   width: 91%;
-  margin: 43px auto;
+  margin: 60px auto 43px auto;
   background: #f1f1f1;
   border-radius: 5px;
   max-width: 400px;
@@ -22,6 +22,7 @@ const ContentCard = styled.div `
 
   @media ${breakpoints.laptop} {
     max-width: 700px;
+    margin-top: 95px;
   }
 `
 
