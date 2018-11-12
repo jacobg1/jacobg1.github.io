@@ -53,7 +53,13 @@ const MobileMenuContainer = styled.div `
         border-bottom: 6px solid #f1f1f1;
         box-shadow: 0px 3px #78b4f9;
         padding-bottom: 4px;  
-        transition: all .3s ease-in-out;
+        
+    }
+    & span.transition {
+        transition: transform .5s ease-in-out;
+    }
+    & span.transitionBack {
+        transition: transform .2s ease-in-out;
     }
     & span.rotateUp {
         transform: rotate(45deg);
@@ -69,8 +75,14 @@ const MobileMenuContainer = styled.div `
         left: -4px;
     }
     & span.disappear {
-        display: none;
+        visibility: hidden;
     } 
+    & span.rotateBackUp {
+        ${'' /* transform: rotate(0); */}
+    }
+    & span.rotateBackDown {
+        ${'' /* transform: rotate(0); */}
+    }
 `
 
 const DesktopMenu = styled.div `
@@ -123,12 +135,14 @@ class MobileMenu extends Component {
         super(props);
         this.state = { 
             showMenu: false,
-            rotate: false 
+            rotate: false,
+            transition: true 
         };
         
         this.openMenu = () => this.setState(prevState => ({
             showMenu: !prevState.showMenu,
-            rotate: !prevState.rotate
+            rotate: !prevState.rotate,
+            transition: true
         }), function () {
             if(this.state.showMenu) {
                 localStorage.setItem('open', '1')
@@ -145,13 +159,19 @@ class MobileMenu extends Component {
 
             this.setState({ 
                 showMenu: true,
-                rotate: true
+                rotate: true,
+                transition: false
+              
+                
             })
 
         } else {
             this.setState({ 
                 showMenu: false,
-                rotate: false
+                rotate: false,
+                transition: false
+             
+                
             })
         }
     }
@@ -182,9 +202,9 @@ class MobileMenu extends Component {
         return (
           <React.Fragment>
             <MobileMenuContainer onClick={ this.openMenu }>
-                <span className={ this.state.rotate ? "rotateUp" : "" }></span>
-                <span className={ this.state.rotate ? "disappear" : "" }></span>
-                <span className={ this.state.rotate ? "rotateDown" : "" }></span>   
+                    <span className={this.state.rotate && this.state.transition ? "rotateUp transition" : this.state.rotate ? "rotateUp" : "transitionBack" }></span>
+                    <span className={this.state.rotate && this.state.transition ? "disappear transition" : this.state.rotate ? "disappear" : "" }></span>
+                    <span className={this.state.rotate && this.state.transition ? "rotateDown transition" : this.state.rotate ? "rotateDown" : "transitionBack" }></span>   
             </MobileMenuContainer>
             { this.state.showMenu ? menu : '' }
 
