@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
+import { breakpoints } from './breakpoints';
 
 const StyledHeroImage = styled(props => <Img {...props} />) `
     &[style] {
@@ -13,6 +14,10 @@ const StyledHeroImage = styled(props => <Img {...props} />) `
     width: 100%;
     height: 246px;
     z-index: -1;
+
+    @media ${breakpoints.laptop} {
+      height: 275px;
+    }
 `   
 
 const HeroImage = ({ data }) => (
