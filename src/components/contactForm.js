@@ -9,16 +9,40 @@ import loader from '../images/Ripple.svg'
 
 const MyForm = styled.form`
     margin: 0 auto;
-    text-align: center;
-    & input {
+    text-align: left;
+     width: 90%;
+     max-width: 400px;
+    & input, textarea {
+        font-weight: 600;
         display: block;
-        margin: 0 auto;
+        margin: 15px auto;
+        width: 100%;
+        padding: 10px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        border: none;
+        color: #20224b;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        :focus {
+          outline-color: #73b2fb;
+        }
     }
     & textarea {
-        display: block;
-        margin: 0 auto;
+        height: 90px;
     }
-
+    & button {
+        font-weight: 600;
+        letter-spacing: .3px;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        border: 2px solid #73b2fb;
+        /* padding: 26px; */
+        line-height: 35px;
+        padding: 0 25px;
+        margin-top: 6px;
+        background: #73b2fb;
+        color: white;
+        text-shadow: 0 1px 1px rgb(106,80,91);
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
     & input.error, textarea.error {
         border-color: red;
     }
@@ -46,7 +70,9 @@ const SuccessMessage = styled.div`
 `
 const LoadingSpinner = styled.img `
     display: none;
-    margin: 0 auto;
+    ${'' /* margin: 0 auto; */}
+     width: 90%;
+     max-width: 400px;
     ${({ loading }) => loading && `
         display: block;
     `}
@@ -60,6 +86,19 @@ const EmailErrorMessage = styled.div`
         display: block
     `}
 `
+const FormErrorHolder = styled.div`
+    width: 90%;
+    margin: 0 auto;
+    & ul {
+        margin-bottom: 0;
+    }
+     & li {
+        margin-bottom: 4px;
+        color: red;
+     }
+
+`
+
 class ContactForm extends Component {
     constructor() {
         super()
@@ -183,53 +222,61 @@ class ContactForm extends Component {
        
         return (
             <React.Fragment>
-                {
-                    formErrors.map(( error, index) => (
-                        <span key={ index }>{ error.text }</span>
-                    ))
-                }
+
+              <FormErrorHolder>
+                <ul>
+                  {
+                  formErrors.map(( error, index) => (
+                      <li key={ index }>{ error.text }</li>
+                  ))
+                  }
+                </ul>
+              </FormErrorHolder>
+
               <MyForm 
                   onSubmit={ this.handleSubmit }
-                  submitted={this.state.submitted}
+                  submitted={ this.state.submitted }
                   >
                 
-                <label>Name:</label>
+                {/* <label>Name:</label> */}
                 <input 
                     className={ this.state.noName ? 'error' : '' }
                     type="text" 
                     name="name"
-                    value={this.state.name} 
-                    onChange={this.handleChange} />
+                    placeholder="Name"
+                    value={ this.state.name} 
+                    onChange={ this.handleChange } />
                 {/* {
                   this.state.formErrors.noName
                   ? <p>please enter name</p>
                   : ''  
                 } */}
-                <label>Email:</label>
+                {/* <label>Email:</label> */}
                 <input 
                     className={ this.state.noEmail ? 'error' : '' }
-                    type="email"
+                    type="text"
                     name="email"
-                    value={this.state.email} 
-                    onChange={this.handleChange} />
+                    placeholder="Email address"
+                    value={ this.state.email } 
+                    onChange={ this.handleChange } />
                     {/* {
                       this.state.formErrors.noEmail
                       ? <p>please enter email</p>
                       : ''
                     } */}
-                <label>Message:</label>
+                {/* <label>Message:</label> */}
                 <textarea
                     className={ this.state.noMessage ? 'error' : ''}
-                    placeholder="Your Message"
+                    placeholder="Message"
                     name="message"
-                    value={this.state.message}
-                    onChange={this.handleChange}
+                    value={ this.state.message }
+                    onChange={ this.handleChange }
                 ></textarea>
 
                 <button 
                     type="submit"
                     className={ this.state.loading ? 'loading' : ''}
-                >submit</button>
+                >Submit</button>
                     
               </MyForm>
 
