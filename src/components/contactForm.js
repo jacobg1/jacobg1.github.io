@@ -4,6 +4,8 @@ import React, { Component } from 'react'
 // import { Link } from 'gatsby'
 import styled from 'styled-components'
 // import { breakpoints } from './breakpoints'
+import axios from 'axios'
+import loader from '../images/Ripple.svg'
 
 const MyForm = styled.form`
     margin: 0 auto;
@@ -20,13 +22,51 @@ const MyForm = styled.form`
     & input.error, textarea.error {
         border-color: red;
     }
+    ${({ submitted }) => submitted && `
+        display: none;
+    `}
+
+    & button.loading {
+        display: none;
+    }
 `
 
+const SuccessMessage = styled.div`
+    background-color: blue;
+    color: white;
+    display: none;
+    
+    ${({ submitted }) => submitted && `
+        display: block;
+    `}
+
+    ${({ loading }) => loading && `
+        background: red;
+    `}
+`
+const LoadingSpinner = styled.img `
+    display: none;
+    margin: 0 auto;
+    ${({ loading }) => loading && `
+        display: block;
+    `}
+`
+const EmailErrorMessage = styled.div`
+    display: none;
+    background-color: red;
+    color: white;
+
+    ${({ emailError }) => emailError && `
+        display: block
+    `}
+`
 class ContactForm extends Component {
     constructor() {
         super()
         this.state = {
             loading: false,
+            submitted: false,
+            emailError: false,
             name: '',
             email: '',
             message: '',
@@ -89,7 +129,36 @@ class ContactForm extends Component {
             this.setState({ formErrors })
             return;
         } else {
-            this.setState({ formErrors })
+            this.setState({ 
+                formErrors,
+                loading: true  
+            })
+            axios.post('http://localhost:3000/email', {
+
+                senderEmail: this.state.email,
+                senderName: this.state.name,
+                senderMessage: this.state.message
+            })
+            .then((response) => {
+                console.log(response.statusText)
+
+                if(response.status === 200) {
+                    console.log('OK', response)
+                    this.setState({
+                        loading: false,
+                        submitted: true,
+                        emailError: false
+                    })
+
+                }
+            })
+            .catch((error) => {
+                console.log('here', error)
+                this.setState({
+                    emailError: true,
+                    loading: false
+                })
+            })
         }
         // eslint-disable-next-line no-console
         console.log(this.state.name)
@@ -119,7 +188,10 @@ class ContactForm extends Component {
                         <span key={ index }>{ error.text }</span>
                     ))
                 }
-              <MyForm onSubmit={ this.handleSubmit }>
+              <MyForm 
+                  onSubmit={ this.handleSubmit }
+                  submitted={this.state.submitted}
+                  >
                 
                 <label>Name:</label>
                 <input 
@@ -136,7 +208,7 @@ class ContactForm extends Component {
                 <label>Email:</label>
                 <input 
                     className={ this.state.noEmail ? 'error' : '' }
-                    type="text"
+                    type="email"
                     name="email"
                     value={this.state.email} 
                     onChange={this.handleChange} />
@@ -154,8 +226,29 @@ class ContactForm extends Component {
                     onChange={this.handleChange}
                 ></textarea>
 
-                <button type="submit">submit</button>
+                <button 
+                    type="submit"
+                    className={ this.state.loading ? 'loading' : ''}
+                >submit</button>
+                    
               </MyForm>
+
+                <LoadingSpinner src={ loader }
+                    loading={ this.state.loading }
+                />
+                
+                <SuccessMessage
+                    submitted={ this.state.submitted }
+                    loading={ this.state.loading }
+                >
+                    <p>Thank you for contacting me, I&#44;ll be in touch shortly!</p>
+                </SuccessMessage>
+
+                <EmailErrorMessage
+                    emailError={ this.state.emailError }
+                >
+                    <p>Trouble communicating with the server, please try again</p>
+                </EmailErrorMessage>
             </React.Fragment>
         )
     }
