@@ -6,12 +6,13 @@ import { breakpoints } from './breakpoints'
 
 const MobileModal = styled.div `
     ${'' /* border-radius: 5px; */}
-    background: linear-gradient(135deg,rgb(235,229,231) 0%,rgb(115, 178, 251) 24%,rgb(121,206,253) 50%,rgb(115,178,251) 70%,rgb(235,229,231) 100%);
+    ${'' /* background: linear-gradient(135deg,rgb(235,229,231) 0%,rgb(115, 178, 251) 24%,rgb(121,206,253) 50%,rgb(115,178,251) 70%,rgb(235,229,231) 100%); */}
     position: absolute;
+    background: #ef6060;
     ${'' /* left: 50%;                
     transform: translateX(-50%); */}
     top: 0;
-    height: 246px;
+    height: 244.4px;
     width: 100%;
     padding-top: 43px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
