@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import styled from 'styled-components'
 import { breakpoints } from '../components/breakpoints';
+import Img from 'gatsby-image'
 
 const ContentCard = styled.div `
   padding: 15px;
@@ -219,9 +220,9 @@ var mySkills = [
 
 
 const IndexPage = () => (
-    <Layout>
+  <Layout>
         <BodyContainer>
-            <ContentCard>
+            <ContentCard>         
                 <Statement>
                     A creative thinker who uses ingenuity to find innovative solutions to
                     challenging problems. I use insight, imagination and coding fundamentals to
@@ -264,14 +265,3 @@ const IndexPage = () => (
 
 export default IndexPage
 
-export const pageQuery = graphql `
-  query {
-    backgroundImage: file(relativePath: { regex:"/pineapple/" }) {
-       childImageSharp {
-        sizes(maxWidth: 1500) {
-          ...GatsbyImageSharpSizes
-        }
-      }
-    }
-  }
-`
