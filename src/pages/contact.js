@@ -7,9 +7,9 @@ import styled from 'styled-components'
 import { breakpoints } from '../components/breakpoints';
 
 const ContentCard = styled.div`
-  padding: 15px;
+  padding: 5px 0;
   width: 91%;
-  margin: 60px auto 43px auto;
+  margin: 100px auto 43px auto;
   background: #f1f1f1;
   border-radius: 5px;
   text-align: center;
@@ -20,9 +20,29 @@ const ContentCard = styled.div`
     padding: 25px;
     
   } */}
+  & p {
+    color: #20224b;
+    font-weight: 600;
+    margin: 0;
+    font-size: 20px;
+  }
+
+  & a {
+      display: inline-block;
+      margin: 15px 10px;
+      text-decoration: none;
+      font-size: 23px;
+      color: #ef6060;
+      transition: color .3s ease-in-out;
+      font-weight: 600;
+
+      :hover {
+        color: #73b2fb;
+      }
+  }
 
   @media ${breakpoints.laptop} {
-    max-width: 700px;
+    ${'' /* max-width: 700px; */}
     margin-top: 95px;
   }
 `
@@ -34,8 +54,9 @@ export default function ContactPage ({ data })  {
         return (
             <Layout>
                 <ContentCard>
-                    <p>Email me at: </p><a href={"mailto:" + email}>{email}</a>
-                    <p>Or submit the form below:</p>
+                    <p style={{ display: 'inline-block' }}> </p>
+                        <a href={ 'mailto:' + email }>{ email }</a>
+                    {/* <p>Or submit the form below:</p> */}
                 </ContentCard>
                 <ContactForm />
             </Layout>
