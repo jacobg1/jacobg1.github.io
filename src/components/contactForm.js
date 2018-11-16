@@ -10,17 +10,20 @@ import loader from '../images/Ripple.svg'
 const MyForm = styled.form`
     margin: 0 auto;
     text-align: left;
-     width: 90%;
-     max-width: 400px;
+    width: 90%;
+    max-width: 400px;
+
     & input, textarea {
         font-weight: 600;
         display: block;
         margin: 15px auto;
         width: 100%;
         padding: 10px;
+        background: #f1f1f1;
         box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
         border: none;
         color: #20224b;
+        border-radius: 5px;
         font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
         :focus {
           outline-color: #73b2fb;
@@ -31,6 +34,7 @@ const MyForm = styled.form`
     }
     & button {
         font-weight: 600;
+        border-radius: 5px;
         letter-spacing: .3px;
         font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
         border: 2px solid #73b2fb;
@@ -40,8 +44,18 @@ const MyForm = styled.form`
         margin-top: 6px;
         background: #73b2fb;
         color: white;
+        cursor: pointer;
         text-shadow: 0 1px 1px rgb(106,80,91);
         box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        transition: all .3s ease-in-out;
+        :hover {
+            background: #f1f1f1;
+            color: #73b2fb;
+            text-shadow: none;
+        }
+        :focus {
+            outline: none;
+        }
     }
     & input.error, textarea.error {
         border-color: red;
@@ -56,47 +70,60 @@ const MyForm = styled.form`
 `
 
 const SuccessMessage = styled.div`
-    background-color: blue;
-    color: white;
     display: none;
-    
+    text-align: center;
+    & p {
+        color: #70affe;
+        font-size: 25px;
+        margin: 109px 0;
+        font-weight: 600;
+    }
+
     ${({ submitted }) => submitted && `
         display: block;
     `}
 
-    ${({ loading }) => loading && `
-        background: red;
+    ${({error}) => error && `
+        display: none;
     `}
+
+   
 `
 const LoadingSpinner = styled.img `
     display: none;
     ${'' /* margin: 0 auto; */}
-     width: 90%;
-     max-width: 400px;
+    
     ${({ loading }) => loading && `
         display: block;
     `}
 `
 const EmailErrorMessage = styled.div`
     display: none;
-    background-color: red;
-    color: white;
-
+    text-align: center;
+    & p {
+         color: #ef6060;
+        font-size: 25px;
+        margin: 40px 0;
+        font-weight: 600;
+    }
     ${({ emailError }) => emailError && `
         display: block
     `}
 `
 const FormErrorHolder = styled.div`
     width: 90%;
-    margin: 0 auto;
+    margin: 0 auto 25px auto;
+    max-width: 400px;
+
     & ul {
         margin-bottom: 0;
     }
-     & li {
+    & li {
         margin-bottom: 4px;
-        color: red;
-     }
-
+        color: #ef6060;
+        font-weight: 600;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    }
 `
 
 class ContactForm extends Component {
@@ -233,10 +260,16 @@ class ContactForm extends Component {
                 </ul>
               </FormErrorHolder>
 
+              <EmailErrorMessage
+                  emailError={this.state.emailError}
+              >
+                <p>Trouble communicating with the server, please try again</p>
+              </EmailErrorMessage>
+
               <MyForm 
                   onSubmit={ this.handleSubmit }
                   submitted={ this.state.submitted }
-                  >
+              >
                 
                 {/* <label>Name:</label> */}
                 <input 
@@ -279,23 +312,19 @@ class ContactForm extends Component {
                 >Submit</button>
                     
               </MyForm>
-
-                <LoadingSpinner src={ loader }
-                    loading={ this.state.loading }
-                />
-                
+                <div style={{maxWidth: 457, margin: '0 auto'}}>
+                    <LoadingSpinner src={ loader }
+                        loading={ this.state.loading }
+                    />
+                </div>
                 <SuccessMessage
                     submitted={ this.state.submitted }
-                    loading={ this.state.loading }
+                    error={ this.state.emailError }
                 >
-                    <p>Thank you for contacting me, I&#44;ll be in touch shortly!</p>
+                    <p>Thank you for contacting me, I&apos;ll be in touch shortly!</p>
                 </SuccessMessage>
 
-                <EmailErrorMessage
-                    emailError={ this.state.emailError }
-                >
-                    <p>Trouble communicating with the server, please try again</p>
-                </EmailErrorMessage>
+                
             </React.Fragment>
         )
     }
