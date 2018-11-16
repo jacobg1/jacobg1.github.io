@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import HeroImage from '../components/heroImage'
+import Headshot from '../components/headshot'
 import styled from 'styled-components'
 import { breakpoints } from './breakpoints'
 import MobileMenu from '../components/mobileMenu'
@@ -94,6 +95,7 @@ const HeaderLink = styled(Link) `
     font-size: 42px;
     max-width: 409px;
     line-height: 50px;
+    padding-top: 70px;
   }
 `
 
@@ -193,10 +195,12 @@ const Header = ({ siteTitle, location }) => (
     
     
       <HeaderContentWrapper>
-        <MobileMenu location={location} />
+        <MobileMenu location={ location } />
+
+        <Headshot />
 
         <HeaderTitle>
-          <HeaderLink to="/">{siteTitle}</HeaderLink>
+          <HeaderLink to="/">{ siteTitle }</HeaderLink>
         </HeaderTitle>
 
       </HeaderContentWrapper>
@@ -222,3 +226,5 @@ Header.propTypes = {
 }
 
 export default Header
+
+
