@@ -27,7 +27,7 @@ const Layout = ({ children }) => (
     render={data => (
       <React.Fragment> 
         <Helmet
-          title={data.site.siteMetadata.title}
+          title={ data.site.siteMetadata.title }
           meta={[
             { name: 'A creative thinker who uses ingenuity to find innovative solutions to challenging problems. I use insight, imagination and coding fundamentals to create success by drawing on my dedication, persistence and passion for web development', content: 'Sample' },
             { name: 'keywords', content: 'Jacob Greenwald, Web Developer, Javascript' },
@@ -36,10 +36,15 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
 
-        <Header siteTitle={data.site.siteMetadata.title} location={location.pathname} />
+        <Header 
+          siteTitle={ data.site.siteMetadata.title } 
+          location={ location.pathname } 
+        />
 
-        <SiteContainer>{children}</SiteContainer>
-        <Footer email={data.site.siteMetadata.email} />
+        <SiteContainer>{ children }</SiteContainer>
+
+        <Footer email={ data.site.siteMetadata.email } />
+
       </React.Fragment>
     )}
   />
