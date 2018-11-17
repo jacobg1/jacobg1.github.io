@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
@@ -17,13 +17,14 @@ const StyledHeadshot = styled(props => <Img {...props} />)`
     left: 8%;
     display: none;
 
-    @media ${breakpoints.tablet} {
+    ${'' /* @media ${breakpoints.tablet} {
       display: inline-block;
-    }
+    } */}
     
     
 
     @media ${breakpoints.laptop} {
+      display: inline-block;
       top: 50px;
       left: 10%;
       width: 185px;
@@ -31,38 +32,26 @@ const StyledHeadshot = styled(props => <Img {...props} />)`
 
     @media ${breakpoints.desktop} {
       left: 15%;
+      top: 40px;
+      width: 211px;
     }
 `
 
-const Headshot = ({ data }) => (
-    <StyledHeadshot fluid={data.backgroundImage.childImageSharp.fluid} />
-)
-
-
-// eslint-disable-next-line react/display-name
-export default props => (
-    <StaticQuery
-        query={graphql`
-          query {
-            backgroundImage: file(relativePath: { regex: "/headshot/" }) {
-              childImageSharp {
-                fluid(maxWidth: 300) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
+const Headshot = () => (
+  <StaticQuery
+    query={graphql`
+      query {
+        headshotImage: file(relativePath: { regex: "/headshot/" }) {
+          childImageSharp {
+            fluid(maxWidth: 300) {
+              ...GatsbyImageSharpFluid
             }
           }
-        `}
-        render={data => <Headshot data={data} {...props} />}
-    />
+        }
+      }
+    `}
+    render={data => <StyledHeadshot fluid={data.headshotImage.childImageSharp.fluid} />}
+  />
 )
+export default Headshot
 
-Headshot.propTypes = {
-    data: PropTypes.shape({
-        backgroundImage: PropTypes.shape({
-            childImageSharp: PropTypes.shape({
-                fluid: PropTypes.object.isRequired
-            }).isRequired
-        }).isRequired
-    }).isRequired
-}
