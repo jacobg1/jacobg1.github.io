@@ -54,9 +54,9 @@ const LinkHolder = styled.div `
     }
   }
 
-  @media ${breakpoints.desktop} {
+  /* @media ${breakpoints.desktop} {
     line-height: 50px;
-  }
+  } */
    
   & a {
     text-decoration: none; 
