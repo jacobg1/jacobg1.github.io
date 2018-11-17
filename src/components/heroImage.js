@@ -12,7 +12,7 @@ const StyledHeroImage = styled(props => <Img {...props} />) `
     left: 0;
     top: 0;
     width: 100%;
-    height: 246px;
+    height: 260px;
     z-index: -1;
 
     @media ${breakpoints.laptop} {
