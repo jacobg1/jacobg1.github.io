@@ -7,7 +7,7 @@ import { breakpoints } from './breakpoints'
 const FooterContainer = styled.div`
     width: 100%;
     height: 100%;
-    background: #70b0fe;
+    background: #ef6060;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -23,6 +23,10 @@ const FooterContainer = styled.div`
       display: block;
       text-align: center;
 			font-weight: 600;
+            transition: color .3s ease-in-out;
+            :hover {
+                color: #000;
+            }
       @media ${breakpoints.footer} {
         display: inline-block;
       }
@@ -36,6 +40,12 @@ const ResumeLink = styled(Link) `
     padding-right: 25px;
   }
 `	
+const ContactLink = styled(Link) `
+    padding-bottom: 15px;
+    @media ${breakpoints.footer} {
+    padding-right: 25px;
+  }
+`
 
 const Footer = ({ email }) => (
     <FooterContainer>
@@ -44,7 +54,9 @@ const Footer = ({ email }) => (
         </div>
         <div>
             <ResumeLink to="#">Resume</ResumeLink>
+            <ContactLink to="/contact/">Contact</ContactLink>
             <Link to="/icon-credits/">Icon Credit</Link>
+
         </div>
     </FooterContainer>
 )
