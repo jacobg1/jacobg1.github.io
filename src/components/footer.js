@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { breakpoints } from './breakpoints'
+import resume from '../images/resume.pdf'
 
 const FooterContainer = styled.div`
     width: 100%;
@@ -22,18 +23,18 @@ const FooterContainer = styled.div`
       text-decoration: none;
       display: block;
       text-align: center;
-			font-weight: 600;
-            transition: color .3s ease-in-out;
-            :hover {
-                color: #000;
-            }
+	  font-weight: 600;
+      transition: color .3s ease-in-out;
+      :hover {
+          color: #000;
+      }
       @media ${breakpoints.footer} {
         display: inline-block;
       }
     }
 `
 
-const ResumeLink = styled(Link) `
+const ResumeLink = styled.a `
   padding-bottom: 15px;
   padding-top: 15px;
   @media ${breakpoints.footer} {
@@ -49,15 +50,24 @@ const ContactLink = styled(Link) `
 
 const Footer = ({ email }) => (
     <FooterContainer>
+
         <div>
-            <a href={"mailto:" + email}>{email}</a>
+            <a href={ "mailto:" + email }>{ email }</a>
         </div>
+
         <div>
-            <ResumeLink to="#">Resume</ResumeLink>
+            <ResumeLink 
+              href={ resume } 
+              target="_blank" 
+            rel="noopener noreferrer"
+            >
+              Resume
+            </ResumeLink>
+
             <ContactLink to="/contact/">Contact</ContactLink>
             <Link to="/icon-credits/">Icon Credit</Link>
-
         </div>
+
     </FooterContainer>
 )
 
