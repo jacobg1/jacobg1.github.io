@@ -5,23 +5,22 @@ import styled from 'styled-components'
 import { breakpoints } from './breakpoints'
 
 const MobileModal = styled.div `
-    ${'' /* border-radius: 5px; */}
-    ${'' /* background: linear-gradient(135deg,rgb(235,229,231) 0%,rgb(115, 178, 251) 24%,rgb(121,206,253) 50%,rgb(115,178,251) 70%,rgb(235,229,231) 100%); */}
     position: absolute;
     background: #ef6060;
-    ${'' /* left: 50%;                
-    transform: translateX(-50%); */}
     top: 0;
-    height: 244.4px;
+    height: 281px;
     width: 100%;
-    padding-top: 43px;
+    padding-top: 40px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
     @media ${breakpoints.specialHeader} {
         width: 200px;
     }
+    @media ${breakpoints.tablet} {
+        padding-top: 32px;
+        height: 253.5px;
+    }
     @media ${breakpoints.laptop} {
-      ${'' /* height: 250px; */}
       display: none;
     }
 
@@ -32,10 +31,11 @@ const MobileModal = styled.div `
       padding: 9px 0;
       display: block;
       width: 41%;
-      margin: 0 auto;
+      margin: 3px auto 0px auto;
       text-align: center;
       color: white;
-      text-shadow: 0 1px 1px rgb(106,80,91)
+      text-shadow: 0 1px 1px rgb(106,80,91);
+      box-shadow: 0px 3px #78b4f9;
     }
 `
 const MobileMenuContainer = styled.div `
@@ -78,12 +78,6 @@ const MobileMenuContainer = styled.div `
     & span.disappear {
         visibility: hidden;
     } 
-    & span.rotateBackUp {
-        ${'' /* transform: rotate(0); */}
-    }
-    & span.rotateBackDown {
-        ${'' /* transform: rotate(0); */}
-    }
 `
 
 const DesktopMenu = styled.div `
@@ -93,8 +87,7 @@ const DesktopMenu = styled.div `
         display: block;
         float: right;
         padding-right: 35px;
-        padding-top: 30px;
-        
+        padding-top: 10px;
     }
 
     & a {
@@ -104,8 +97,7 @@ const DesktopMenu = styled.div `
         font-size: 15px;
         text-shadow: 0 1px 1px rgb(41, 35, 37);
         font-weight: bold;
-         padding: 5px 19px 7px 19px;
-        
+        padding: 5px 19px 7px 19px;
     }
 `
 
@@ -120,6 +112,7 @@ const MenuButton = styled.div `
     :hover {
         background: #ef6060;
         box-shadow: none;
+        border-color: white;
     }
 `
 
