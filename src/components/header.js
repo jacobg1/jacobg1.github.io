@@ -1,12 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import HeroImage from '../components/heroImage'
-import Headshot from '../components/headshot'
+// import HeroImage from '../components/heroImage'
+// import Headshot from '../components/headshot'
 import styled from 'styled-components'
 import { breakpoints } from './breakpoints'
 import MobileMenu from '../components/mobileMenu'
 // import Image from '../components/image'
+import ParticleCircle from '../components/particlecircle'
+
 const Card = styled.div`
   border-radius: 5px;
   ${'' /* background: linear-gradient(135deg,rgb(235,229,231) 0%,rgb(115, 178, 251) 24%,rgb(121,206,253) 50%,rgb(115,178,251) 70%,rgb(235,229,231) 100%); */}
@@ -15,11 +17,12 @@ const Card = styled.div`
 `
 
 const HeaderContainer = styled(Card) `
-  height: 225px;
+  height: 255px;
   ${'' /* margin: 40px auto 20px auto; */}
   ${'' /* width: 90%;
   max-width: 393px; */}
   margin: 0 auto;
+  background: #ef6060;
   
   @media ${breakpoints.tablet} {
     ${'' /* width: 65%;
@@ -28,10 +31,11 @@ const HeaderContainer = styled(Card) `
 
   @media ${breakpoints.laptop} {
     ${'' /* width: 50%; */}
+    height: 300px;
     
   }
   @media ${breakpoints.desktop} {
-    height: 250px;
+    /* height: 250px; */
   }
 `
 
@@ -40,6 +44,7 @@ const HeaderContentWrapper = styled.div `
   ${'' /* max-width: 960px;
   padding: 10px 1.0875rem 17px 1.0875rem; */}
   position: relative;
+  z-index: 0;
 
   @media ${breakpoints.mobile} {
     padding-top: 5px;
@@ -61,6 +66,13 @@ const HeaderContentWrapper = styled.div `
 
 const HeaderTitle = styled.h1 `
   ${'' /* margin: 48px auto 0 auto; */}
+      margin-bottom: 67px;
+      @media ${breakpoints.mobile} {
+            margin-bottom: 67px;
+      }
+      @media ${breakpoints.tablet} {
+            margin-bottom: 73px;
+      }
 `
 
 const HeaderLink = styled(Link) `
@@ -68,7 +80,7 @@ const HeaderLink = styled(Link) `
   text-decoration: none;
   font-size: 26px;
   max-width: 265px;
-  padding-top: 70px;
+  padding-top: 95px;
   margin: 0 auto;
   display: block;
   text-align: center;
@@ -81,13 +93,19 @@ const HeaderLink = styled(Link) `
 
   @media ${breakpoints.mobile} {  
     font-size: 30px;
-    padding-top: 60px;
+        padding-top: 91px;
+    /* padding-top: 60px; */
   }
-
+  @media ${breakpoints.tablet} {
+    font-size: 35px;
+    max-width: 290px;
+    padding-top: 86px;
+  }
   @media ${breakpoints.laptop} {
     font-size: 35px;
     max-width: 290px;
-    padding-top: 95px;
+    padding-top: 0;
+    margin-top: 100px;
     line-height: 46px;
   }
 
@@ -95,7 +113,7 @@ const HeaderLink = styled(Link) `
     font-size: 42px;
     max-width: 409px;
     line-height: 50px;
-    padding-top: 70px;
+        margin-top: 88px;
   }
 `
 
@@ -197,15 +215,18 @@ const Header = ({ siteTitle, location }) => (
       <HeaderContentWrapper>
         <MobileMenu location={ location } />
 
-        <Headshot />
-        
+        {/* <Headshot /> */}
+        <ParticleCircle
+          left
+          right={false}
+        />
         <HeaderTitle>
           <HeaderLink to="/">{ siteTitle }</HeaderLink>
         </HeaderTitle>
 
       </HeaderContentWrapper>
 
-      <HeroImage />
+      {/* <HeroImage /> */}
 
       <ButtonWrapper>
       {
