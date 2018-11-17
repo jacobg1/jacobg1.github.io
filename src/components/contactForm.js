@@ -83,7 +83,7 @@ const SuccessMessage = styled.div`
         display: block;
     `}
 
-    ${({error}) => error && `
+    ${({ error }) => error && `
         display: none;
     `}
 
