@@ -6,7 +6,7 @@ import Headshot from '../components/headshot'
 import styled from 'styled-components'
 import { breakpoints } from './breakpoints'
 import MobileMenu from '../components/mobileMenu'
-
+// import Image from '../components/image'
 const Card = styled.div`
   border-radius: 5px;
   ${'' /* background: linear-gradient(135deg,rgb(235,229,231) 0%,rgb(115, 178, 251) 24%,rgb(121,206,253) 50%,rgb(115,178,251) 70%,rgb(235,229,231) 100%); */}
@@ -198,7 +198,7 @@ const Header = ({ siteTitle, location }) => (
         <MobileMenu location={ location } />
 
         <Headshot />
-
+        
         <HeaderTitle>
           <HeaderLink to="/">{ siteTitle }</HeaderLink>
         </HeaderTitle>
