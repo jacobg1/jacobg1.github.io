@@ -21,6 +21,10 @@ const ParticleHolder = styled.div `
         & canvas {
             width: 150px !important;
             height: 150px !important;
+            @media ${breakpoints.tablet} {
+                width: 170px !important;
+                height: 170px !important;
+            }
             @media ${breakpoints.laptop} {
                 width: 180px !important;
                 height: 180px !important;
@@ -38,7 +42,11 @@ const ParticleHolder = styled.div `
         ${({ moveRight }) => moveRight && `
             right: 5%;
         `}
-
+        @media ${breakpoints.tablet} {
+                width: 170px;
+                height: 170px;
+                top: 43px;
+        }
         @media ${breakpoints.laptop} {
             width: 180px;
             height: 180px;
@@ -48,7 +56,7 @@ const ParticleHolder = styled.div `
         @media ${breakpoints.desktop} {
             width: 220px;
             height: 220px;
-            top: 27px;
+            top: 41px;
         }
    
 `
