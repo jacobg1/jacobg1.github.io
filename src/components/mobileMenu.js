@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { breakpoints } from './breakpoints'
+import resume from '../images/resume.pdf'
 
 const MobileModal = styled.div `
     position: absolute;
@@ -11,14 +12,16 @@ const MobileModal = styled.div `
     height: 281px;
     width: 100%;
     padding-top: 40px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    /* box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
 
     @media ${breakpoints.specialHeader} {
         width: 200px;
+        height: 253.5px;
+        padding-top: 30px
     }
     @media ${breakpoints.tablet} {
         padding-top: 32px;
-        height: 253.5px;
+        
     }
     @media ${breakpoints.laptop} {
       display: none;
@@ -184,6 +187,18 @@ class MobileMenu extends Component {
                     >
                       { link.text }  
                     </a> 
+
+                    : link.text === 'Resume'
+
+                    ? <a 
+                      key={ index }
+                      href={ resume }
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      { link.text }  
+                    </a>
+
                     : link.text === 'Projects' 
                       && this.props.location !== '/' 
                       && this.props.location !== '/contact/'
@@ -193,14 +208,16 @@ class MobileMenu extends Component {
                     : link.text === 'Contact' 
                       && this.props.location !== '/' 
                       && this.props.location === '/contact/'
-
+                    
                     ? <Link key={index} to="/">Home</Link>
 
                     : <Link key={ index } to={ link.href }>
                         { link.text }
                       </Link>
+                    
                 ))
             }
+   
             </MobileModal>
         )
         return (
@@ -216,15 +233,29 @@ class MobileMenu extends Component {
             {
                 links.map((link, index) => (
                   link.text === 'Github' ?
-                      <MenuButton key={ index }>
-                    <a
-                      href={ link.href }
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      { link.text }
-                    </a> 
+                    
+                    <MenuButton key={ index }>
+                        <a
+                            href={ link.href }
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                        { link.text }
+                        </a> 
                     </MenuButton>
+
+                    : link.text === 'Resume'
+
+                    ? <MenuButton key={ index }>
+                        <a 
+                            key={ index }
+                            href={ resume }
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            { link.text }  
+                        </a>
+                      </MenuButton>
 
                     : link.text === 'Projects' 
                       && this.props.location !== '/' 
@@ -232,18 +263,18 @@ class MobileMenu extends Component {
 
                     ? <MenuButton key={ index }>
                         <Link to="/">Home</Link>
-                    </MenuButton>
+                      </MenuButton>
 
                     : link.text === 'Contact' 
                       && this.props.location === '/contact/' 
 
                     ? <MenuButton key={ index }>
                         <Link to="/">Home</Link>
-                    </MenuButton>
+                      </MenuButton>
 
                     : <MenuButton key={ index }>
                         <Link to={ link.href }>{ link.text }</Link>
-                    </MenuButton>
+                      </MenuButton>
                 ))
             }
         
