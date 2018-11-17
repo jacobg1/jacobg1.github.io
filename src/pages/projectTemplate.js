@@ -41,22 +41,19 @@ const LinkHolder = styled.div `
   line-height: 37px;
   text-align: center;
   position: relative;
-  background: #73b2fb;
+  background: #ef6c6f;
   border-radius: 30px;
-  border: 3px solid #73b2fb;
+  border: 2px solid #f3f3f3;
   transition: all .3s ease-in-out;
+
   :hover {
     @media ${breakpoints.tablet} {
       opacity: .7;
       box-shadow: none;
-      background: #ef6060;
-      ${'' /* border-radius: 0; */}
+      text-shadow: 0 1px 1px rgb(41,35,37);
+      background: #8cc3f9;
     }
   }
-
-  /* @media ${breakpoints.desktop} {
-    line-height: 50px;
-  } */
    
   & a {
     text-decoration: none; 
@@ -77,17 +74,17 @@ const LinkHolder = styled.div `
       font-size: 22px;
     }
   }
+
   && img{
     width: 20px;
     margin: 0;
     position: absolute;
     left: 10px;
-    top: 10px;
+    top: 8px;
     
     @media ${breakpoints.desktop} {
-      width: 27px;
-      left: 14px;
-      top: 12px;
+      width: 24px;
+      top: 8px;
     }
   }
 `
@@ -102,12 +99,11 @@ const ProjectTitle = styled.h2 `
 
   @media ${breakpoints.laptop} {
     font-size: 40px;
-    margin: 90px 0 30px 0;
+    margin: 50px 0 30px 0;
   }
 
   @media ${breakpoints.desktop} {
     font-size: 45px;
-    margin-top: 60px;
   }
   
 `
@@ -118,6 +114,7 @@ const ProjectHolder = styled.div `
   @media ${breakpoints.mobile} {
     padding: 20px 20px 15px 20px;
   }
+
   && p {
     line-height: 23px;
     margin: 0;
@@ -128,7 +125,6 @@ const ProjectHolder = styled.div `
       font-size: 17px;
       line-height: 25px;
     }
-
     @media ${breakpoints.laptop} {
       font-size: 19px;
       line-height: 30px;
@@ -141,7 +137,7 @@ const ProjectHolder = styled.div `
   
 `
 const ProjectLink = styled(Link)`
-  color: #73b2fb;
+  color: #f3f3f3;
   font-weight: bold;
   text-decoration: none;
   font-size: 14px;
@@ -168,17 +164,6 @@ const ProjectIcon = styled(Img)`
   vertical-align: sub;
   margin-left: 17px;
 `
-
-// const TopIconFlex = styled(FlexContainer) `
-//   margin-top:0;
-//   margin-bottom: 20px;
-// `
-
-// const BottmomIconFlex = styled(FlexContainer)`
-//   margin-top: 15px;
-//   margin-bottom: 10px;
-//   justify-content: center;
-// `
 
 const NavFlex = styled(FlexContainer) `
   max-width: 450px;
@@ -284,11 +269,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-// placeholderImage: file(relativePath: { regex: "/github/" }) {
-//   childImageSharp {
-//     fixed(width: 125, height: 125) {
-//               ...GatsbyImageSharpFixed
-//     }
-//   }
-// }
