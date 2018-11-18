@@ -65,7 +65,7 @@ const Footer = ({ email }) => (
             </ResumeLink>
 
             <ContactLink to="/contact/">Contact</ContactLink>
-            <Link to="/icon-credits/">Icon Credit</Link>
+            <Link to="/icon-credits/">Icons</Link>
         </div>
 
     </FooterContainer>
