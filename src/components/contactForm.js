@@ -25,7 +25,7 @@ const MyForm = styled.form`
           outline-color: #73b2fb;
         }
     }
-    
+
     & textarea {
         height: 90px;
     }
@@ -191,7 +191,7 @@ class ContactForm extends Component {
                 formErrors,
                 loading: true  
             })
-            axios.post('http://localhost:3000/email', {
+            axios.post('https://express-nasa-search.herokuapp.com/email', {
 
                 senderEmail: this.state.email,
                 senderName: this.state.name,
