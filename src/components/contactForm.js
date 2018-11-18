@@ -1,9 +1,5 @@
-/* eslint-disable no-console */
 import React, { Component } from 'react'
-// import PropTypes from 'prop-types'
-// import { Link } from 'gatsby'
 import styled from 'styled-components'
-// import { breakpoints } from './breakpoints'
 import axios from 'axios'
 import loader from '../images/Ripple.svg'
 
@@ -29,29 +25,30 @@ const MyForm = styled.form`
           outline-color: #73b2fb;
         }
     }
+    
     & textarea {
         height: 90px;
     }
+
     & button {
         font-weight: 600;
         border-radius: 5px;
         letter-spacing: .3px;
         font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-        border: 2px solid #73b2fb;
-        /* padding: 26px; */
+        border: 2px solid #ffffff;
         line-height: 35px;
         padding: 0 25px;
         margin-top: 6px;
-        background: #73b2fb;
+        background: #ef6060;
         color: white;
         cursor: pointer;
         text-shadow: 0 1px 1px rgb(106,80,91);
         box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
         transition: all .3s ease-in-out;
         :hover {
-            background: #f1f1f1;
-            color: #73b2fb;
-            text-shadow: none;
+            background: #73b2fb;
+            color: #ffffff;
+            box-shadow: none;
         }
         :focus {
             outline: none;
@@ -73,10 +70,11 @@ const SuccessMessage = styled.div`
     display: none;
     text-align: center;
     & p {
-        color: #70affe;
+        color: #f1f1f1;
         font-size: 25px;
         margin: 109px 0;
         font-weight: 600;
+        text-shadow: 0 1px 1px rgb(106,80,91);
     }
 
     ${({ submitted }) => submitted && `
@@ -86,12 +84,9 @@ const SuccessMessage = styled.div`
     ${({ error }) => error && `
         display: none;
     `}
-
-   
 `
 const LoadingSpinner = styled.img `
     display: none;
-    ${'' /* margin: 0 auto; */}
     
     ${({ loading }) => loading && `
         display: block;
@@ -101,9 +96,9 @@ const EmailErrorMessage = styled.div`
     display: none;
     text-align: center;
     & p {
-         color: #ef6060;
+        color: #ef6060;
         font-size: 25px;
-        margin: 40px 0;
+        margin: 109px 0;
         font-weight: 600;
     }
     ${({ emailError }) => emailError && `
@@ -143,8 +138,6 @@ class ContactForm extends Component {
         }  
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
-        this.validateInput = this.validateInput.bind(this)
-        this.clearForm = this.clearForm.bind(this)
     }
     validateInput (name, email, message) {
         
@@ -162,8 +155,7 @@ class ContactForm extends Component {
             errorArray.push({ type:'message', text: 'please enter a message' })
             this.setState({ noMessage: true })
         }
-        // eslint-disable-next-line no-console
-        console.log(errorArray)
+
         return errorArray
        
 
@@ -206,10 +198,8 @@ class ContactForm extends Component {
                 senderMessage: this.state.message
             })
             .then((response) => {
-                console.log(response.statusText)
 
                 if(response.status === 200) {
-                    console.log('OK', response)
                     this.setState({
                         loading: false,
                         submitted: true,
@@ -219,31 +209,16 @@ class ContactForm extends Component {
                 }
             })
             .catch((error) => {
-                console.log('here', error)
+                // eslint-disable-next-line no-console
+                console.log(error)
                 this.setState({
                     emailError: true,
                     loading: false
                 })
             })
         }
-        // eslint-disable-next-line no-console
-        console.log(this.state.name)
     } 
-    clearForm () {
-        // console.log('here here', this.state.formErrors)
-
-        this.setState({
-            name: '',
-            email: '',
-            message: '',
-            noName: false,
-            noEmail: false,
-            noMessage: false,
-            formErrors: [] 
-        }, function () {
-            console.log('here here here', this.state.formErrors)
-        })
-    }
+    
     render () {
         let { formErrors } = this.state
        
@@ -261,7 +236,7 @@ class ContactForm extends Component {
               </FormErrorHolder>
 
               <EmailErrorMessage
-                  emailError={this.state.emailError}
+                  emailError={ this.state.emailError }
               >
                 <p>Trouble communicating with the server, please try again</p>
               </EmailErrorMessage>
@@ -271,7 +246,6 @@ class ContactForm extends Component {
                   submitted={ this.state.submitted }
               >
                 
-                {/* <label>Name:</label> */}
                 <input 
                     className={ this.state.noName ? 'error' : '' }
                     type="text" 
@@ -279,12 +253,7 @@ class ContactForm extends Component {
                     placeholder="Name"
                     value={ this.state.name} 
                     onChange={ this.handleChange } />
-                {/* {
-                  this.state.formErrors.noName
-                  ? <p>please enter name</p>
-                  : ''  
-                } */}
-                {/* <label>Email:</label> */}
+              
                 <input 
                     className={ this.state.noEmail ? 'error' : '' }
                     type="text"
@@ -292,12 +261,7 @@ class ContactForm extends Component {
                     placeholder="Email address"
                     value={ this.state.email } 
                     onChange={ this.handleChange } />
-                    {/* {
-                      this.state.formErrors.noEmail
-                      ? <p>please enter email</p>
-                      : ''
-                    } */}
-                {/* <label>Message:</label> */}
+                   
                 <textarea
                     className={ this.state.noMessage ? 'error' : ''}
                     placeholder="Message"
@@ -312,11 +276,13 @@ class ContactForm extends Component {
                 >Submit</button>
                     
               </MyForm>
+
                 <div style={{maxWidth: 457, margin: '0 auto'}}>
                     <LoadingSpinner src={ loader }
                         loading={ this.state.loading }
                     />
                 </div>
+
                 <SuccessMessage
                     submitted={ this.state.submitted }
                     error={ this.state.emailError }
@@ -324,11 +290,9 @@ class ContactForm extends Component {
                     <p>Thank you for contacting me, I&apos;ll be in touch shortly!</p>
                 </SuccessMessage>
 
-                
             </React.Fragment>
         )
     }
-    
 }
 
 export default ContactForm
