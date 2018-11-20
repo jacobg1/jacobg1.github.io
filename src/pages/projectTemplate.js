@@ -10,7 +10,9 @@ import Img from 'gatsby-image';
 import { breakpoints } from '../components/breakpoints'
 
 const ProjectCard = styled.div`
-  background: #f1f1f1;
+  /* background: #f1f1f1; */
+  background: #4065b7;
+    border: 2px solid #ef6061;
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   margin: 0 auto 20px auto;
@@ -119,7 +121,8 @@ const ProjectHolder = styled.div `
     line-height: 23px;
     margin: 0;
     font-size: 16px;
-    color: #0c1d96;
+    /* color: #0c1d96; */
+    color: #f1f1f1;
 
     @media ${breakpoints.mobile} {
       font-size: 17px;
@@ -140,9 +143,10 @@ const ProjectLink = styled(Link)`
   color: #f3f3f3;
   font-weight: bold;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 15px;
   border-bottom: 4px solid;
   padding: 0 2px 4px 2px;
+  letter-spacing: .4px;
   transition: color .3s ease-in-out;
   :hover {
     color: #000000;
