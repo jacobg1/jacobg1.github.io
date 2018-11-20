@@ -8,7 +8,9 @@ const ContentCard = styled.div `
   padding: 15px;
   width: 91%;
   margin: 50px auto 43px auto;
-  background: #f1f1f1;
+  /* background: #f1f1f1; */
+  border: 2px solid #ef6061;
+  background: #4066b7;
   border-radius: 5px;
   max-width: 400px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -31,9 +33,11 @@ const BodyContainer = styled.div `
 const Statement = styled.p `
   margin: 0;
   font-size: 15px;
-  color: #0c1d96;
+  /* color: #0c1d96; */
+  color: #f1f1f1;
   font-weight: bold;
   line-height: 23px;
+  letter-spacing: .7px;
 
   @media ${breakpoints.tablet} {
     font-size: 20px;
@@ -59,7 +63,11 @@ const FlexContainer = styled.div `
 `
 
 const SkillsHolder = styled.div `
-  background: #f3f3f3;
+  /* background: #f3f3f3; */
+      background: #4065b7;
+      color: #f1f1f1;
+      border: 2px solid #ef6061;
+
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   box-sizing: border-box;
@@ -70,11 +78,13 @@ const SkillsHolder = styled.div `
 `
 
 const Skill = styled.p `
-  color: #0c1d96;
+  /* color: #0c1d96; */
+  color: #f1f1f1;
   font-size: 14px;
   margin: 0;
   padding: 14px 0;
   font-weight: bold;
+  letter-spacing: .7px;
 
   @media ${breakpoints.tablet} {
     padding: 20px 0;
@@ -177,17 +187,18 @@ const Key = styled.span`
   font-size: 15px;
   font-weight: bold;
   color: #0c1d96;
+  letter-spacing: .7px;
 
   @media ${breakpoints.tablet} {
     font-size: 17px;
   }
 `
 var mySkills = [
-  { type: 'lang', name: 'JS' }, 
-  { type: 'frame', name: 'Angular' },
+  { type: 'lang', name: 'JavaScript' }, 
+  { type: 'frame', name: 'AngularJS' },
   { type: 'db', name: 'SQL' },
   { type: 'frame', name: 'React' },
-  { type: 'lang', name: 'CSS' },
+  { type: 'lang', name: 'CSS/SASS' },
   { type: 'db', name: 'MongoDB' },
   { type: 'frame', name: 'Rails' },
   { type: 'frame', name: 'ExpressJS' },
@@ -195,6 +206,9 @@ var mySkills = [
   { type: 'lang', name: 'Ruby' },
   { type: 'db', name: 'GraphQL' },
   { type: 'frame', name: 'Drupal' },
+  { type: 'frame', name: 'Angular2+'},
+  { type: 'frame', name: 'WordPress'},
+  { type: 'lang', name: 'CSS in JS'}
 ];
 
 
