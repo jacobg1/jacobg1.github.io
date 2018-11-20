@@ -14,6 +14,7 @@ const FooterContainer = styled.div`
     align-items: center;
     flex-direction: column;
     padding: 25px 40px;
+    margin-top: -50px;
     @media ${breakpoints.footer} {
         justify-content: space-between;
         flex-direction: row;
