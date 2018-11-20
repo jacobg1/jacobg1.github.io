@@ -5,8 +5,11 @@ import Particles from 'react-particles-js'
 import { breakpoints } from './breakpoints';
 
 const ParticleHolder = styled.div `
-        background: #1e1c43;
         background-image: radial-gradient(#b7acac,#52668c,#1e1c43);
+        /* background-image: radial-gradient(#e2a6a6,#a03e62,rgb(41,35,37)); */
+        /* background-image: radial-gradient(#ffc3c3,#d84e81,#1e1c43); */
+        /* box-shadow: -6px -1px 20px 0px rgba(179, 177, 106, 0.96), 0 3px 6px rgba(0,0,0,0.23); */
+            box-shadow: -6px -1px 20px 0px rgb(241, 241, 241), 6px -1px 20px 0px rgb(241, 241, 241);
         width: 150px;
         height: 150px;
         border-radius: 100%;
@@ -78,7 +81,7 @@ class ParticleCircle extends Component {
                                 "value": 600,
                                 "density": {
                                     "enable": true,
-                                    "value_area": 789.1476416322727
+                                    "value_area": 400
                                 }
                             },
                             "color": {
@@ -87,8 +90,8 @@ class ParticleCircle extends Component {
                             "shape": {
                                 "type": "circle",
                                 "stroke": {
-                                    "width": 2,
-                                    "color": "#000000"
+                                    "width": 3,
+                                    "color": "#73b2fb"
                                 },
                                 "polygon": {
                                     "nb_sides": 5
@@ -128,7 +131,7 @@ class ParticleCircle extends Component {
                             },
                             "move": {
                                 "enable": true,
-                                "speed": 1,
+                                "speed": 3,
                                 "direction": "none",
                                 "random": true,
                                 "straight": false,
@@ -146,7 +149,8 @@ class ParticleCircle extends Component {
                             "events": {
                                 "onhover": {
                                     "enable": true,
-                                    "mode": "bubble"
+                                    "mode": "bubble",
+                                    "size": 100
                                 },
                                 "onclick": {
                                     "enable": true,
@@ -163,7 +167,7 @@ class ParticleCircle extends Component {
                                 },
                                 "bubble": {
                                     "distance": 83.91608391608392,
-                                    "size": 1,
+                                    "size": 3,
                                     "duration": 3,
                                     "opacity": 1,
                                     "speed": 3
