@@ -9,6 +9,8 @@ import MobileMenu from '../components/mobileMenu'
 // import Image from '../components/image'
 import ParticleCircle from '../components/particlecircle'
 
+
+
 const Card = styled.div`
   border-radius: 5px;
   ${'' /* background: linear-gradient(135deg,rgb(235,229,231) 0%,rgb(115, 178, 251) 24%,rgb(121,206,253) 50%,rgb(115,178,251) 70%,rgb(235,229,231) 100%); */}
@@ -79,13 +81,15 @@ const HeaderLink = styled(Link) `
   color: #f1f1f1;
   text-decoration: none;
   font-size: 26px;
-  max-width: 265px;
+      max-width: 306px;
   padding-top: 95px;
   margin: 0 auto;
   display: block;
   text-align: center;
   line-height: 35px;
   text-shadow: 0 1px 1px rgb(106,80,91);
+  font-family: 'Archivo';
+  letter-spacing: 1px;
   
   @media ${breakpoints.header} {
     ${'' /* width: 265px; */}
@@ -98,12 +102,12 @@ const HeaderLink = styled(Link) `
   }
   @media ${breakpoints.tablet} {
     font-size: 35px;
-    max-width: 290px;
+    max-width: 354px;
     padding-top: 86px;
   }
   @media ${breakpoints.laptop} {
     font-size: 35px;
-    max-width: 290px;
+    /* max-width: 290px; */
     padding-top: 0;
     margin-top: 100px;
     line-height: 46px;
@@ -111,7 +115,7 @@ const HeaderLink = styled(Link) `
 
   @media ${breakpoints.desktop} {
     font-size: 42px;
-    max-width: 409px;
+    max-width: 423px;
     line-height: 50px;
         margin-top: 88px;
   }
@@ -206,27 +210,20 @@ const Header = ({ siteTitle, location }) => (
   
   <React.Fragment> 
     <HeaderContainer>
-     
-    {/* <AboutMeWrapper>
-      <AboutMeLink to="/space-search/">Projects</AboutMeLink>
-    </AboutMeWrapper> */}
-    
-    
       <HeaderContentWrapper>
+
         <MobileMenu location={ location } />
 
-        {/* <Headshot /> */}
         <ParticleCircle
           left
           right={false}
         />
+
         <HeaderTitle>
           <HeaderLink to="/">{ siteTitle }</HeaderLink>
         </HeaderTitle>
 
       </HeaderContentWrapper>
-
-      {/* <HeroImage /> */}
 
       <ButtonWrapper>
       {
@@ -234,7 +231,6 @@ const Header = ({ siteTitle, location }) => (
         ? <ContactButton to="/">Home</ContactButton>
         : <ContactButton to="/space-search/">Projects</ContactButton>
       }
-        
       </ButtonWrapper>
 
     </HeaderContainer>

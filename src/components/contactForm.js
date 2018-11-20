@@ -20,7 +20,7 @@ const MyForm = styled.form`
         border: none;
         color: #20224b;
         border-radius: 5px;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        font-family: 'Roboto-bold', sans-serif;
         :focus {
           outline-color: #73b2fb;
         }
@@ -34,7 +34,7 @@ const MyForm = styled.form`
         font-weight: 600;
         border-radius: 5px;
         letter-spacing: .3px;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        font-family: 'Roboto-bold', sans-serif;
         border: 2px solid #ffffff;
         line-height: 35px;
         padding: 0 25px;
@@ -115,9 +115,10 @@ const FormErrorHolder = styled.div`
     }
     & li {
         margin-bottom: 4px;
+        font-size: 19px;
         color: #ef6060;
         font-weight: 600;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        font-family: 'Roboto-bold', sans-serif;
     }
 `
 
