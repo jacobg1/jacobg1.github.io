@@ -9,7 +9,8 @@ import { breakpoints } from '../components/breakpoints';
 const ContentCard = styled.div`
   padding: 5px 0;
   width: 91%;
-  margin: 100px auto 43px auto;
+  margin: 52px auto 43px auto;
+  /* margin: 100px auto 43px auto; */
   background: #f1f1f1;
   border-radius: 5px;
   text-align: center;
