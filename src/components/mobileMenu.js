@@ -100,7 +100,7 @@ const DesktopMenu = styled.div `
         font-size: 15px;
         text-shadow: 0 1px 1px rgb(41, 35, 37);
         font-weight: bold;
-        padding: 5px 19px 7px 19px;
+        padding: 6px 19px 7px 19px;
     }
 `
 
