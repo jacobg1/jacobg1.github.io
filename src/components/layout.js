@@ -8,7 +8,7 @@ import './layout.css'
 import styled from 'styled-components'
 
 const SiteContainer = styled.div `
-    margin: 0 auto;
+    margin: 0 auto 62px auto;
     padding-top: 0;
     padding-bottom: 40px;
 `
@@ -29,11 +29,11 @@ const Layout = ({ children }) => (
         <Helmet
           title={ data.site.siteMetadata.title }
           meta={[
-            { name: 'A creative thinker who uses ingenuity to find innovative solutions to challenging problems. I use insight, imagination and coding fundamentals to create success by drawing on my dedication, persistence and passion for web development', content: 'Sample' },
-            { name: 'keywords', content: 'Jacob Greenwald, Web Developer, Javascript' },
+            { name: 'description', content: 'A creative thinker who uses ingenuity to find innovative solutions to challenging problems. I use insight, imagination and coding fundamentals to create success by drawing on my dedication, persistence and passion for web development'},
+            { name: 'keywords', content: 'Jacob Greenwald, Portfolio, Web Developer, Javascript' },
           ]}
         >
-          <html lang="en" />
+                    <html lang="en" />
         </Helmet>
 
         <Header 
