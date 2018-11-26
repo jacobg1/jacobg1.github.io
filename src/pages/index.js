@@ -33,9 +33,10 @@ const Statement = styled.p `
   margin: 0;
   font-size: 15px;
   color: #f1f1f1;
-  font-weight: bold;
+  font-weight: normal;
   line-height: 23px;
   letter-spacing: .7px;
+  font-family: 'Roboto-bold', sans-serif;
 
   @media ${breakpoints.tablet} {
     font-size: 20px;
@@ -78,8 +79,9 @@ const Skill = styled.p `
   font-size: 14px;
   margin: 0;
   padding: 14px 0;
-  font-weight: bold;
+  font-weight: normal;
   letter-spacing: .7px;
+  font-family: 'Roboto-bold', sans-serif;
 
   @media ${breakpoints.tablet} {
     padding: 20px 0;
@@ -132,12 +134,12 @@ const Triangle = styled(Shapes)`
 const KeyContent = styled.div `
   width: 80%;
   margin: 43px auto;
-  padding: 15px;
+  padding: 13px;
   border: 2px solid #f16b6c;
   background: #4971bf;
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  max-width: 256px;
+  max-width: 270px;
 
   @media ${breakpoints.tablet} {
     max-width: 496px;
@@ -182,10 +184,11 @@ const KeyTriangle = styled(Triangle)`
 const Key = styled.span`
   padding-left: 5px;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: normal;
   color: #0c1d96;
   letter-spacing: .7px;
   color: #f1f1f1;
+  font-family: 'Roboto-bold', sans-serif;
 
   @media ${breakpoints.tablet} {
     font-size: 17px;

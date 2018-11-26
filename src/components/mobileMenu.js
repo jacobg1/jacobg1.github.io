@@ -11,12 +11,14 @@ const MobileModal = styled.div `
     height: 281px;
     width: 100%;
     padding-top: 40px;
+    /* z-index: -1; */
     /* box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
-
+    
     @media ${breakpoints.specialHeader} {
         width: 200px;
         height: 253.5px;
-        padding-top: 30px
+        padding-top: 30px;
+        z-index: -1;
     }
     @media ${breakpoints.tablet} {
         padding-top: 32px;
@@ -98,7 +100,8 @@ const DesktopMenu = styled.div `
         text-decoration: none;
         font-size: 16px;
         text-shadow: 0 1px 1px rgb(41, 35, 37);
-        font-weight: bold;
+        /* font-weight: bold; */
+        font-weight: normal;
         /* padding: 6px 19px 7px 19px; */
         @media ${breakpoints.desktop} {
             font-size: 17px;

@@ -21,6 +21,7 @@ const MyForm = styled.form`
         color: #20224b;
         border-radius: 5px;
         font-family: 'Roboto-bold', sans-serif;
+        font-weight: normal;
         :focus {
           outline-color: #73b2fb;
         }
@@ -35,6 +36,7 @@ const MyForm = styled.form`
         border-radius: 5px;
         letter-spacing: .3px;
         font-family: 'Roboto-bold', sans-serif;
+        font-weight: normal;
         border: 2px solid #ffffff;
         line-height: 35px;
         padding: 0 25px;

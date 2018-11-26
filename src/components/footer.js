@@ -26,7 +26,7 @@ const FooterContainer = styled.div`
       text-decoration: none;
       display: block;
       text-align: center;
-	  font-weight: 600;
+	  font-weight: normal;
       transition: color .3s ease-in-out;
       :hover {
           color: rgb(26, 17, 72);
@@ -40,7 +40,7 @@ const FooterContainer = styled.div`
 const ResumeLink = styled.a `
   padding-bottom: 15px;
   padding-top: 15px;
-  
+
   @media ${breakpoints.footer} {
     padding-right: 25px;
   }

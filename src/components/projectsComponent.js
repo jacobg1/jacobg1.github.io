@@ -40,8 +40,9 @@ const NavFlex = styled.div`
 `
 const ProjectSwitch = styled.p`
   color: #f3f3f3;
-  font-weight: bold;
+  /* font-weight: bold; */
   text-decoration: none;
+  font-family: 'Roboto-bold', sans-serif;
   font-size: 15px;
   border-bottom: 4px solid;
   padding: 0 2px 4px 2px;

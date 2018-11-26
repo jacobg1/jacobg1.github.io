@@ -54,15 +54,16 @@ const HeaderLink = styled(Link) `
   color: #f1f1f1;
   text-decoration: none;
   font-size: 26px;
-  max-width: 306px;
+  max-width: 320px;
   padding-top: 95px;
   margin: 0 auto;
   display: block;
   text-align: center;
   line-height: 35px;
   text-shadow: 0 1px 1px rgb(106,80,91);
-  font-family: 'Archivo';
+  font-family: 'Archivo', sans-serif;
   letter-spacing: 1px;
+  /* font-weight: normal; */
 
   @media ${breakpoints.mobile} {  
     font-size: 30px;
@@ -71,7 +72,7 @@ const HeaderLink = styled(Link) `
 
   @media ${breakpoints.tablet} {
     font-size: 35px;
-    max-width: 354px;
+    max-width: 374px;
     padding-top: 86px;
   }
 
@@ -84,7 +85,7 @@ const HeaderLink = styled(Link) `
 
   @media ${breakpoints.desktop} {
     font-size: 42px;
-    max-width: 423px;
+    max-width: 434px;
     line-height: 50px;
     margin-top: 88px;
   }
@@ -118,7 +119,7 @@ const ButtonWrapper = styled.div `
 const ContactButton = styled(Link) `
   color: #ffffff;
   text-decoration: none;
-  font-weight: bold;
+  /* font-weight: bold; */
   display: block;
   font-size: 16px;
 

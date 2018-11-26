@@ -15,6 +15,7 @@ const ContentCard = styled.div`
   text-align: center;
   max-width: 400px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  line-height: 45px;
 
   & p {
     color: #20224b;
@@ -25,7 +26,7 @@ const ContentCard = styled.div`
 
   & a {
       display: inline-block;
-      margin: 15px 10px;
+      /* margin: 15px 10px; */
       text-decoration: none;
       font-size: 23px;
       color: #ef6060;

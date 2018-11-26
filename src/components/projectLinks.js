@@ -27,12 +27,12 @@ const LinkHolder = styled.div`
   transition: all .3s ease-in-out;
 
   :hover {
-    @media ${breakpoints.tablet} {
+    
       opacity: .7;
       box-shadow: none;
       text-shadow: 0 1px 1px rgb(41,35,37);
       background: #8cc3f9;
-    }
+   
   }
    
   & a {
@@ -41,7 +41,7 @@ const LinkHolder = styled.div`
     display: inline-block;
     padding-left: 5px;
     font-size: 15px;
-    font-weight: bold;
+    /* font-weight: bold; */
     height: 100%;
     color: white;
 
