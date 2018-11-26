@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { breakpoints } from './breakpoints'
@@ -130,7 +129,7 @@ const MenuButton = styled.div `
 `
 
 var links = [
-    { text: 'Projects', href: '/space-search/' },
+    { text: 'Projects', href: '/projects/' },
     { text: 'Contact', href: '/contact/' },
     { text: 'Resume', href: '#' },
     { text: 'Github', href: 'https://github.com/jacobg1' },
