@@ -7,8 +7,9 @@ html {
 }
 
 body {
-  margin: 0;
-
+  margin: 0 0 100px;
+  /* bottom = footer height */
+  
 }
 @font-face {
   font-family: "Archivo";
@@ -31,14 +32,15 @@ span {
   /* font-family: "Test" */
 }
 
-
 p,
 span {
   font-family: 'Roboto-reg', sans-serif;
 }
+
 a {
   font-family: 'Roboto-bold', sans-serif;
 }
+
 article,
 aside,
 details,
