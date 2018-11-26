@@ -163,10 +163,10 @@ class Header extends Component {
 
           <ButtonWrapper>
             {
-        this.state.location !== '/' 
-        ? <ContactButton to="/">Home</ContactButton>
-        : <ContactButton to="/space-search/">Projects</ContactButton>
-      }
+              this.state.location !== '/' 
+              ? <ContactButton to="/">Home</ContactButton>
+              : <ContactButton to="/projects/">Projects</ContactButton>
+            }
           </ButtonWrapper>
 
         </HeaderContainer>
