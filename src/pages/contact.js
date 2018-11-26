@@ -10,17 +10,12 @@ const ContentCard = styled.div`
   padding: 5px 0;
   width: 91%;
   margin: 52px auto 43px auto;
-  /* margin: 100px auto 43px auto; */
   background: #f1f1f1;
   border-radius: 5px;
   text-align: center;
   max-width: 400px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
-  ${'' /* @media ${breakpoints.tablet} {            
-    padding: 25px;
-    
-  } */}
   & p {
     color: #20224b;
     font-weight: 600;
@@ -42,8 +37,7 @@ const ContentCard = styled.div`
       }
   }
 
-  @media ${breakpoints.laptop} {
-    ${'' /* max-width: 700px; */}
+  @media ${breakpoints.tablet} {
     margin-top: 95px;
   }
 `
@@ -56,8 +50,7 @@ export default function ContactPage ({ data })  {
             <Layout>
                 <ContentCard>
                     <p style={{ display: 'inline-block' }}> </p>
-                        <a href={ 'mailto:' + email }>{ email }</a>
-                    {/* <p>Or submit the form below:</p> */}
+                    <a href={ 'mailto:' + email }>{ email }</a>
                 </ContentCard>
                 <ContactForm />
             </Layout>
@@ -73,8 +66,6 @@ ContactPage.propTypes = {
     }).isRequired
   }).isRequired
 }
-
-// export default ContactPage
 
 export const pageQuery = graphql`
   query EmailQuery {
