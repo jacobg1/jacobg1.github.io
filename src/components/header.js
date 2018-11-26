@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
@@ -131,40 +131,54 @@ const ContactButton = styled(Link) `
   }
 `
 
-const Header = ({ siteTitle, location }) => (
-  
-  <React.Fragment> 
-    <HeaderContainer>
-      <HeaderContentWrapper>
+class Header extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      location: ""
+    }
+  }
+  componentDidMount() {
+    this.setState({ location: window.location.pathname })
+  }
+  render () {
+    return (
 
-        <MobileMenu location={ location } />
+      <React.Fragment>
+        <HeaderContainer>
+          <HeaderContentWrapper>
 
-        <ParticleCircle
-          left
-          right={false}
-        />
+            <MobileMenu />
 
-        <HeaderTitle>
-          <HeaderLink to="/">{ siteTitle }</HeaderLink>
-        </HeaderTitle>
+            <ParticleCircle
+              left
+              right={false}
+            />
 
-      </HeaderContentWrapper>
+            <HeaderTitle>
+              <HeaderLink to="/">{this.props.siteTitle}</HeaderLink>
+            </HeaderTitle>
 
-      <ButtonWrapper>
-      {
-        location !== '/' 
+          </HeaderContentWrapper>
+
+          <ButtonWrapper>
+            {
+        this.state.location !== '/' 
         ? <ContactButton to="/">Home</ContactButton>
         : <ContactButton to="/space-search/">Projects</ContactButton>
       }
-      </ButtonWrapper>
+          </ButtonWrapper>
 
-    </HeaderContainer>
-  </React.Fragment>
-)
+        </HeaderContainer>
+      </React.Fragment>
+
+    )
+  }
+
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired
 }
 
 export default Header
