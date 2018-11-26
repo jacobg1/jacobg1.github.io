@@ -24,6 +24,7 @@ const ParticleHolder = styled.div `
         & canvas {
             width: 150px !important;
             height: 150px !important;
+            border-radius: 50%;
             @media ${breakpoints.tablet} {
                 width: 170px !important;
                 height: 170px !important;
@@ -33,8 +34,8 @@ const ParticleHolder = styled.div `
                 height: 180px !important;
             }
             @media ${breakpoints.desktop} {
-                width: 220px !important;
-                height: 220px !important;
+                width: 200px !important;
+                height: 200px !important;
             }
         }
 
@@ -57,9 +58,9 @@ const ParticleHolder = styled.div `
         }
 
         @media ${breakpoints.desktop} {
-            width: 220px;
-            height: 220px;
-            top: 41px;
+            width: 200px;
+            height: 200px;
+            top: 50px;
         }
    
 `
