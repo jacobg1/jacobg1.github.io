@@ -44,7 +44,6 @@ const Layout = ({ children }) => (
 
         <Header 
           siteTitle={ data.site.siteMetadata.title } 
-          location={ location.pathname } 
         />
 
         <SiteContainer>{ children }</SiteContainer>
