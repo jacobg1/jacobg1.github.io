@@ -38,6 +38,7 @@ const MobileModal = styled.div `
       margin: 3px auto 0px auto;
       text-align: center;
       color: white;
+      cursor: pointer;
       text-shadow: 0 1px 1px rgb(106,80,91);
       box-shadow: 0px 3px #78b4f9;
     }
@@ -160,10 +161,13 @@ class MobileMenu extends Component {
                 localStorage.setItem('open', '2')
             }
         })
-        
+        this.openResume = this.openResume.bind(this)
     }
     componentDidMount () {
-        this.setState({ location: window.location.pathname })
+        this.setState({ 
+            location: window.location.pathname,
+            window: window
+        })
 
         let checkOpen = localStorage.getItem('open')
 
@@ -187,6 +191,9 @@ class MobileMenu extends Component {
             })
         }
     }
+    openResume () {
+        this.state.window.open(resume, '_blank');
+    }
     render () {
         
         const menu = (
@@ -206,8 +213,8 @@ class MobileMenu extends Component {
                     : link.text === 'Resume'
 
                     ? <a 
+                      onClick={ this.openResume }
                       key={ index }
-                      href={ resume }
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -263,8 +270,9 @@ class MobileMenu extends Component {
 
                     ? <MenuButton key={ index }>
                         <a 
+                           onClick={ this.openResume }
                             key={ index }
-                            href={ resume }
+                            // href="#"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
