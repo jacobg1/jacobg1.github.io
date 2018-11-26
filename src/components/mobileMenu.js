@@ -132,7 +132,7 @@ const MenuButton = styled.div `
 var links = [
     { text: 'Projects', href: '/space-search/' },
     { text: 'Contact', href: '/contact/' },
-    // { text: 'Resume', href: '#' },
+    { text: 'Resume', href: '#' },
     { text: 'Github', href: 'https://github.com/jacobg1' },
 ]
 
@@ -143,7 +143,8 @@ class MobileMenu extends Component {
         this.state = { 
             showMenu: false,
             rotate: false,
-            transition: true 
+            transition: true,
+            location: "" 
         };
         
         this.openMenu = () => this.setState(prevState => ({
@@ -160,6 +161,8 @@ class MobileMenu extends Component {
         
     }
     componentDidMount () {
+        this.setState({ location: window.location.pathname })
+
         let checkOpen = localStorage.getItem('open')
 
         if(checkOpen === '1') {
@@ -210,14 +213,14 @@ class MobileMenu extends Component {
                     </a>
 
                     : link.text === 'Projects' 
-                      && this.props.location !== '/' 
-                      && this.props.location !== '/contact/'
+                      && this.state.location !== '/' 
+                      && this.state.location !== '/contact/'
 
                     ? <Link key={ index } to="/">Home</Link>
 
                     : link.text === 'Contact' 
-                      && this.props.location !== '/' 
-                      && this.props.location === '/contact/'
+                      && this.state.location !== '/' 
+                      && this.state.location === '/contact/'
                     
                     ? <Link key={index} to="/">Home</Link>
 
@@ -268,15 +271,15 @@ class MobileMenu extends Component {
                       </MenuButton>
 
                     : link.text === 'Projects' 
-                      && this.props.location !== '/' 
-                      && this.props.location !== '/contact/'
+                      && this.state.location !== '/' 
+                      && this.state.location !== '/contact/'
 
                     ? <MenuButton key={ index }>
                         <Link to="/">Home</Link>
                       </MenuButton>
 
                     : link.text === 'Contact' 
-                      && this.props.location === '/contact/' 
+                      && this.state.location === '/contact/' 
 
                     ? <MenuButton key={ index }>
                         <Link to="/">Home</Link>
@@ -297,6 +300,3 @@ class MobileMenu extends Component {
 
 export default MobileMenu
 
-MobileMenu.propTypes = {
-    location: PropTypes.string.isRequired
-}
