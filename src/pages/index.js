@@ -8,7 +8,6 @@ const ContentCard = styled.div `
   padding: 15px;
   width: 91%;
   margin: 50px auto 43px auto;
-  /* background: #f1f1f1; */
   border: 2px solid #ef6061;
   background: #4066b7;
   border-radius: 5px;
@@ -33,7 +32,6 @@ const BodyContainer = styled.div `
 const Statement = styled.p `
   margin: 0;
   font-size: 15px;
-  /* color: #0c1d96; */
   color: #f1f1f1;
   font-weight: bold;
   line-height: 23px;
@@ -63,11 +61,9 @@ const FlexContainer = styled.div `
 `
 
 const SkillsHolder = styled.div `
-  /* background: #f3f3f3; */
-      background: #4065b7;
-      color: #f1f1f1;
-      border: 2px solid #ef6061;
-
+  background: #4065b7;
+  color: #f1f1f1;
+  border: 2px solid #ef6061;
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   box-sizing: border-box;
@@ -78,7 +74,6 @@ const SkillsHolder = styled.div `
 `
 
 const Skill = styled.p `
-  /* color: #0c1d96; */
   color: #f1f1f1;
   font-size: 14px;
   margin: 0;
@@ -138,7 +133,8 @@ const KeyContent = styled.div `
   width: 80%;
   margin: 43px auto;
   padding: 15px;
-  background: #f1f1f1;
+  border: 2px solid #f16b6c;
+  background: #4971bf;
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   max-width: 256px;
@@ -151,16 +147,17 @@ const KeyContent = styled.div `
     margin: 50px auto;
   }
 `
+
 const KeyHolder = styled.div `
   position: relative;
   display: inline-block;
 `
+
 const KeyCircle = styled(Circle) `
   position: static;
   display: inline-block;
   width: 13px;
   height: 13px;
-
 `
 const KeySquare = styled(Square)`
   position: static;
@@ -188,6 +185,7 @@ const Key = styled.span`
   font-weight: bold;
   color: #0c1d96;
   letter-spacing: .7px;
+  color: #f1f1f1;
 
   @media ${breakpoints.tablet} {
     font-size: 17px;
