@@ -132,7 +132,7 @@ const MenuButton = styled.div `
 var links = [
     { text: 'Projects', href: '/space-search/' },
     { text: 'Contact', href: '/contact/' },
-    { text: 'Resume', href: '#' },
+    // { text: 'Resume', href: '#' },
     { text: 'Github', href: 'https://github.com/jacobg1' },
 ]
 
