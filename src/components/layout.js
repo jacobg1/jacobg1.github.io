@@ -6,11 +6,15 @@ import Header from './header'
 import Footer from './footer'
 import './layout.css'
 import styled from 'styled-components'
+import { breakpoints } from '../components/breakpoints'
 
 const SiteContainer = styled.div `
     margin: 0 auto 62px auto;
     padding-top: 0;
-    padding-bottom: 40px;
+    padding-bottom: 105px;
+    @media ${breakpoints.tablet} {
+      padding-bottom: 65px;
+    }
 `
 const Layout = ({ children }) => (
   <StaticQuery
@@ -33,7 +37,9 @@ const Layout = ({ children }) => (
             { name: 'keywords', content: 'Jacob Greenwald, Portfolio, Web Developer, Javascript' },
           ]}
         >
-                    <html lang="en" />
+        
+        <html lang="en" />
+        
         </Helmet>
 
         <Header 

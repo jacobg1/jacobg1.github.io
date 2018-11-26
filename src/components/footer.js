@@ -7,18 +7,20 @@ import resume from '../images/resume.pdf'
 
 const FooterContainer = styled.div`
     width: 100%;
-    height: 100%;
     background: #ef6060;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
     padding: 25px 40px;
-    margin-top: -50px;
+    position: absolute;
+    bottom: 0;
+
     @media ${breakpoints.footer} {
         justify-content: space-between;
         flex-direction: row;
     }
+
     & a {
       color: white;
       text-decoration: none;
@@ -27,7 +29,7 @@ const FooterContainer = styled.div`
 	  font-weight: 600;
       transition: color .3s ease-in-out;
       :hover {
-          color: #000;
+          color: rgb(26, 17, 72);
       }
       @media ${breakpoints.footer} {
         display: inline-block;
@@ -38,12 +40,14 @@ const FooterContainer = styled.div`
 const ResumeLink = styled.a `
   padding-bottom: 15px;
   padding-top: 15px;
+  
   @media ${breakpoints.footer} {
     padding-right: 25px;
   }
 `	
 const ContactLink = styled(Link) `
     padding-bottom: 15px;
+
     @media ${breakpoints.footer} {
     padding-right: 25px;
   }
