@@ -97,10 +97,13 @@ const DesktopMenu = styled.div `
         color: white;
         display: block;
         text-decoration: none;
-        font-size: 15px;
+        font-size: 16px;
         text-shadow: 0 1px 1px rgb(41, 35, 37);
         font-weight: bold;
-        padding: 6px 19px 7px 19px;
+        /* padding: 6px 19px 7px 19px; */
+        @media ${breakpoints.desktop} {
+            font-size: 17px;
+        }
     }
 `
 
@@ -112,10 +115,17 @@ const MenuButton = styled.div `
     background: #70b0fe;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     transition: all .3s ease-in-out;
+    width: 95px;
+    text-align: center;
+    line-height: 30px;
+    @media ${breakpoints.desktop} {
+        /* line-height: 33px; */
+        width: 100px;
+    }
     :hover {
         background: #ef6060;
         box-shadow: none;
-        border-color: white;
+        border-color: #7cb9fd;
     }
 `
 
