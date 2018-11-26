@@ -10,20 +10,17 @@ import SimonText from './simonText'
 import spaceImage from '../images/space.png'
 // import crunchImage from '../images/turntable.png'
 // import simonImage from '../images/simon.png'
+import ProjectLinks from './projectLinks'
 
-const FlexContainer = styled.div`
+
+const NavFlex = styled.div`
+  max-width: 450px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
-  width: 90%;
+  justify-content: space-around;
+  width: 100%;
   margin: 20px auto 5px auto;
-`
-const NavFlex = styled(FlexContainer)`
-  max-width: 450px;
-  margin-top: 20px;
-  margin-bottom: 35px;
-  width: 93%;
 
   & p.space-active {
     color: #1a1148;
@@ -51,6 +48,7 @@ const ProjectSwitch = styled.p`
   letter-spacing: .4px;
   transition: color .3s ease-in-out;
   cursor: pointer;
+  margin-bottom: 15px;
 
   :hover {
     color: #1a1148;
@@ -231,7 +229,13 @@ class ProjectsComponent extends Component {
                       Simon Game
                     </ProjectSwitch>
                 </NavFlex>
-               
+
+               <ProjectLinks 
+                    spaceLinks={ this.state.spaceActive }
+                    crunchLinks={ this.state.crunchActive }
+                    simonLinks={ this.state.simonActive }
+               />
+
                { projectBody }
                 
             </React.Fragment>
