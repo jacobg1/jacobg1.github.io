@@ -10,18 +10,21 @@ import Img from 'gatsby-image';
 import { breakpoints } from '../components/breakpoints'
 
 const ProjectCard = styled.div`
-  /* background: #f1f1f1; */
   background: #4065b7;
-    border: 2px solid #ef6061;
+  border: 2px solid #ef6061;
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   margin: 0 auto 20px auto;
   width: 90%;
   max-width: 833px;
+
   && a {
     text-decoration: none;
-    color: #70b0fe;
-    font-weight: bold;
+    color: #f16b6d;
+    transition: color .3s ease-in-out;
+    :hover {
+      color: #ffffff;
+    }
   }
 
   @media ${breakpoints.tablet} {
@@ -73,7 +76,7 @@ const LinkHolder = styled.div `
 
     @media ${breakpoints.desktop} {
       max-width: 275px;
-      font-size: 22px;
+      font-size: 19px;
     }
   }
 
@@ -121,7 +124,6 @@ const ProjectHolder = styled.div `
     line-height: 23px;
     margin: 0;
     font-size: 16px;
-    /* color: #0c1d96; */
     color: #f1f1f1;
 
     @media ${breakpoints.mobile} {
@@ -133,7 +135,7 @@ const ProjectHolder = styled.div `
       line-height: 30px;
     }
     @media ${breakpoints.desktop} {
-      font-size: 24px;
+      font-size: 20px;
       line-height: 31px;
     }
   } 
@@ -148,8 +150,9 @@ const ProjectLink = styled(Link)`
   padding: 0 2px 4px 2px;
   letter-spacing: .4px;
   transition: color .3s ease-in-out;
+
   :hover {
-    color: #000000;
+    color: #1a1148;
   }
 
   @media ${breakpoints.mobile} {  
@@ -164,6 +167,7 @@ const ProjectLink = styled(Link)`
     font-size: 22px;
   }
 `
+
 const ProjectIcon = styled(Img)`
   vertical-align: sub;
   margin-left: 17px;
@@ -205,9 +209,9 @@ export default function Template({ data }) {
       </div>
 
       <NavFlex>
-        <ProjectLink to="/space-search/" activeStyle={{color: "black"}}>Space Search</ProjectLink>
-        <ProjectLink to="/crunchfm/" activeStyle={{ color: "black" }}>CRUNCHfm</ProjectLink>
-        <ProjectLink to="/simon-game/" activeStyle={{ color: "black" }}>Simon Game</ProjectLink>
+        <ProjectLink to="/space-search/" activeStyle={{ color: "#1a1148" }}>Space Search</ProjectLink>
+        <ProjectLink to="/crunchfm/" activeStyle={{ color: "#1a1148" }}>CRUNCHfm</ProjectLink>
+        <ProjectLink to="/simon-game/" activeStyle={{ color: "#1a1148" }}>Simon Game</ProjectLink>
       </NavFlex>
 
       <ButtonFlex>
