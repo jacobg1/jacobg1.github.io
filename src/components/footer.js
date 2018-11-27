@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { breakpoints } from './breakpoints'
-import resume from '../images/resume.pdf'
 
 const FooterContainer = styled.div`
     width: 100%;
@@ -61,14 +60,7 @@ const Footer = ({ email }) => (
         </div>
 
         <div>
-            <ResumeLink 
-              href={ resume } 
-              target="_blank" 
-            rel="noopener noreferrer"
-            >
-              Resume
-            </ResumeLink>
-
+            <ResumeLink href="/resume/">Resume</ResumeLink>
             <ContactLink to="/contact/">Contact</ContactLink>
             <Link to="/icon-credits/">Icons</Link>
         </div>
