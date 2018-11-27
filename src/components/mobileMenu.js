@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { breakpoints } from './breakpoints'
-import resume from '../images/resume.pdf'
 
 const MobileModal = styled.div `
     position: absolute;
@@ -18,7 +17,7 @@ const MobileModal = styled.div `
         width: 200px;
         height: 253.5px;
         padding-top: 30px;
-        z-index: -1;
+      
     }
     @media ${breakpoints.tablet} {
         padding-top: 32px;
@@ -135,7 +134,7 @@ const MenuButton = styled.div `
 var links = [
     { text: 'Projects', href: '/projects/' },
     { text: 'Contact', href: '/contact/' },
-    { text: 'Resume', href: '#' },
+    { text: 'Resume', href: '/resume/' },
     { text: 'Github', href: 'https://github.com/jacobg1' },
 ]
 
@@ -161,7 +160,6 @@ class MobileMenu extends Component {
                 localStorage.setItem('open', '2')
             }
         })
-        this.openResume = this.openResume.bind(this)
     }
     componentDidMount () {
         this.setState({ 
@@ -177,8 +175,6 @@ class MobileMenu extends Component {
                 showMenu: true,
                 rotate: true,
                 transition: false
-              
-                
             })
 
         } else {
@@ -186,14 +182,10 @@ class MobileMenu extends Component {
                 showMenu: false,
                 rotate: false,
                 transition: false
-             
-                
             })
         }
     }
-    openResume () {
-        this.state.window.open(resume, '_blank');
-    }
+    
     render () {
         
         const menu = (
@@ -211,19 +203,14 @@ class MobileMenu extends Component {
                     </a> 
 
                     : link.text === 'Resume'
+                      && this.state.location === '/resume/'
 
-                    ? <a 
-                      onClick={ this.openResume }
-                      key={ index }
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      { link.text }  
-                    </a>
+                    ? <Link key={index} to="/">Home</Link>
 
                     : link.text === 'Projects' 
                       && this.state.location !== '/' 
                       && this.state.location !== '/contact/'
+                      && this.state.location !== '/resume/'
 
                     ? <Link key={ index } to="/">Home</Link>
 
@@ -267,22 +254,16 @@ class MobileMenu extends Component {
                     </MenuButton>
 
                     : link.text === 'Resume'
+                      && this.state.location === '/resume/'
 
                     ? <MenuButton key={ index }>
-                        <a 
-                           onClick={ this.openResume }
-                            key={ index }
-                            // href="#"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            { link.text }  
-                        </a>
+                        <Link to="/">Home</Link>
                       </MenuButton>
 
                     : link.text === 'Projects' 
                       && this.state.location !== '/' 
                       && this.state.location !== '/contact/'
+                      && this.state.location !== '/resume/'
 
                     ? <MenuButton key={ index }>
                         <Link to="/">Home</Link>
