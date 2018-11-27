@@ -48,7 +48,7 @@ const ContactLink = styled(Link) `
     padding-bottom: 15px;
 
     @media ${breakpoints.footer} {
-    padding-right: 25px;
+    padding-right: 24px;
   }
 `
 
