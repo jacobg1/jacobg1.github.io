@@ -208,9 +208,7 @@ class MobileMenu extends Component {
                     ? <Link key={index} to="/">Home</Link>
 
                     : link.text === 'Projects' 
-                      && this.state.location !== '/' 
-                      && this.state.location !== '/contact/'
-                      && this.state.location !== '/resume/'
+                      && this.state.location === '/projects/' 
 
                     ? <Link key={ index } to="/">Home</Link>
 
@@ -259,12 +257,10 @@ class MobileMenu extends Component {
                     ? <MenuButton key={ index }>
                         <Link to="/">Home</Link>
                       </MenuButton>
-
+                            
                     : link.text === 'Projects' 
-                      && this.state.location !== '/' 
-                      && this.state.location !== '/contact/'
-                      && this.state.location !== '/resume/'
-
+                      && this.state.location === '/projects/' 
+                      
                     ? <MenuButton key={ index }>
                         <Link to="/">Home</Link>
                       </MenuButton>
