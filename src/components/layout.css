@@ -302,6 +302,7 @@ html {
 }
 
 body {
+  min-width: 320px;
   background-color: #7ebafb;
   font-family: georgia, serif;
   font-weight: normal;

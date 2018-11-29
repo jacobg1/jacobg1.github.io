@@ -12,8 +12,9 @@ const FooterContainer = styled.div`
     align-items: center;
     flex-direction: column;
     padding: 25px 40px;
-    position: absolute;
-    bottom: 0;
+    min-width: 320px;
+    position: absolute;  
+    bottom: 0;  
 
     @media ${breakpoints.footer} {
         justify-content: space-between;
