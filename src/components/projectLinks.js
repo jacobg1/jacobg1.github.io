@@ -115,8 +115,8 @@ class ProjectLinks extends Component {
                     target="_blank"
                     href={
                         this.props.spaceLinks ? 'http://space-search.surge.sh'
-                        : this.props.crunchLinks ? 'https://jacobg1.github.io/CRUNCHfm/'
-                        : this.props.simonLinks ? 'https://jacobg1.github.io/Simon-Says/'
+                        : this.props.crunchLinks ? 'https://jacob-greenwald.com/CRUNCHfm/'
+                        : this.props.simonLinks ? 'https://jacob-greenwald.com/Simon-Says/'
                         : '#'    
                     }  
                 >
