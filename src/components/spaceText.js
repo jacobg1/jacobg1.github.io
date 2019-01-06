@@ -34,25 +34,24 @@ const ProjectHolder = styled.div`
   `
 const SpaceText = () => (
     <ProjectHolder>
-        <p>A search UI that pulls photos from NASA&#39;s image API.  Thanks NASA!  Users input search terms into the 
+        <p>A search UI that pulls photos from NASA&#39;s image API. Users input search terms into the 
         search bar and results are displayed below.  
-        Includes two different views, grid and list.  
-        Give it a try!</p>
+        Includes two different views, grid and list.</p>
 
         <br/>
 
         <p>When the user inputs a serch term and hits &#34;Go&#34; 
-        The front-end makes a call to the back-end which then 
+         the front end makes a call to the back end which then 
         makes a call to NASA&#39;s image API.  Results are returned 
         the backend, procesed and sent to the front end where they 
         are then displayed.</p>
 
         <br />
 
-        <p>The front end is built in VueJS with HTML, 
-        CSS and JavaScript.  The back end is built in ExpressJS, 
+    <p>The front end is built in <a href="https://vuejs.org/" target="_blank" rel="noopener noreferrer">VueJS</a> with HTML, 
+        CSS and JavaScript.  The back end is built in <a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer">ExpressJS</a>, 
         a Node based JavaScript framework.  Check out the Github 
-        repo for the backend <a href="https://github.com/jacobg1/NasaSearch" target="_blank" rel="noopener noreferrer">here</a></p>
+        repo for the back end <a href="https://github.com/jacobg1/NasaSearch" target="_blank" rel="noopener noreferrer">here</a>.</p>
     </ProjectHolder>
 )
 

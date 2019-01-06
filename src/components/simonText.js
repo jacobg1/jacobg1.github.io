@@ -35,18 +35,31 @@ const ProjectHolder = styled.div`
 const SimonText = () => (
     <ProjectHolder>
 
-        <p>My first website.</p>
-    
-        <br />
-    
-        <p>A simple game of simon. Players must match 
-        patterns of increasing complexity and length. 
-        If a player makes an incorrect choice, they game starts over.
-        Make it to level five and win! Includes sound on / off modes.</p>
-    
-        <br />
-    
-        <p>Created with JavaScript, HTML / CSS and JQuery.</p>
+    <p>A search UI that pulls in live concert recordings from 
+     <a href="https://archive.org" target="_blank" rel="noopener noreferrer"> archive.org&#39;s </a> 
+    API.</p>
+
+    <br />
+
+    <p>Features include a custom JavaScript music player, ability to 
+    make playlists that persist across
+    browser sessions and access to thousands of live concert recordings.</p>
+
+    <br />
+
+    <p>App also features a custom visualizer made by connecting to the browser&#39;s 
+    audio api and using 
+    <a href="https://d3js.org/" target="_blank" rel="noopener noreferrer"> D3.js</a> to 
+    dynamically display a visual representation
+    of the height of the sound waves for whichever song is playing. </p>
+
+    <br />
+
+    <p>The front end is built in <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">ReactJS</a> with HTML, CSS and JavaScript.
+    The back end is built in <a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer">ExpressJS</a>, 
+    a Node based JavaScript framework. Check out the GitHub repo for the back end 
+    <a href="https://github.com/jacobg1/concert-search-BE" target="_blank" rel="noopener noreferrer"> here</a>.
+    </p>
     
     </ProjectHolder>
 )

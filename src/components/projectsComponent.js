@@ -109,7 +109,7 @@ const ProjectCard = styled.div`
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   margin: 0 auto 20px auto;
   width: 90%;
-  max-width: 833px;
+  max-width: 870px;
 
   && a {
     text-decoration: none;
@@ -173,9 +173,9 @@ class ProjectsComponent extends Component {
             <React.Fragment>
                 <ProjectTitle> 
                 {
-                    this.state.spaceActive ? 'Space Search'
-                    : this.state.crunchActive ? 'CRUNCHfm'
-                    : this.state.simonActive ? 'Simon Game'
+                    this.state.spaceActive ? 'Concert Search'
+                    : this.state.crunchActive ? 'Space Search'
+                    : this.state.simonActive ? 'CRUNCHfm'
                     : ''
                 }
                    
@@ -190,9 +190,9 @@ class ProjectsComponent extends Component {
 
             <ProjectCard>
                 {
-                    this.state.spaceActive ? <SpaceText />
-                    : this.state.crunchActive ? <CrunchText />
-                    : this.state.simonActive ? <SimonText />
+                    this.state.spaceActive ? <SimonText />
+                    : this.state.crunchActive ? <SpaceText />
+                    : this.state.simonActive ? <CrunchText />
                     : ''
                 }
 
@@ -213,21 +213,21 @@ class ProjectsComponent extends Component {
                       className={ this.state.spaceActive ? 'space-active' : '' }
                       onClick={ this.showSpace }
                     >
-                      Space Search
+                     Concert Search
                     </ProjectSwitch>
 
                     <ProjectSwitch 
                       className={ this.state.crunchActive ? 'crunch-active' : '' }
                       onClick={ this.showCrunch }
                     >
-                      CRUNCHfm
+                       Space Search
                     </ProjectSwitch>
 
                     <ProjectSwitch 
                       className={ this.state.simonActive ? 'simon-active' : '' }
                       onClick={ this.showSimon }
                     >
-                      Simon Game
+                      CRUNCHfm
                     </ProjectSwitch>
                 </NavFlex>
 

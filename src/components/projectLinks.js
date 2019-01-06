@@ -96,9 +96,9 @@ class ProjectLinks extends Component {
                     rel="noopener noreferrer" 
                     target="_blank"
                     href={
-                        this.props.spaceLinks ? 'https://github.com/jacobg1/SpaceSearch'
-                        : this.props.crunchLinks ? 'https://github.com/jacobg1/CRUNCHfm'
-                        : this.props.simonLinks ? 'https://github.com/jacobg1/Simon-Says'
+                        this.props.spaceLinks ? 'https://github.com/jacobg1/concert-search'
+                        : this.props.crunchLinks ? 'https://github.com/jacobg1/SpaceSearch'
+                        : this.props.simonLinks ? 'https://github.com/jacobg1/CRUNCHfm'
                         : '#'    
                     } 
                 >
@@ -114,9 +114,9 @@ class ProjectLinks extends Component {
                     rel="noopener noreferrer" 
                     target="_blank"
                     href={
-                        this.props.spaceLinks ? 'http://space-search.surge.sh'
-                        : this.props.crunchLinks ? 'https://jacob-greenwald.com/CRUNCHfm/'
-                        : this.props.simonLinks ? 'https://jacob-greenwald.com/Simon-Says/'
+                        this.props.spaceLinks ? 'http://concert-search.surge.sh'
+                        : this.props.crunchLinks ? 'http://space-search.surge.sh'
+                        : this.props.simonLinks ? 'https://jacob-greenwald.com/CRUNCHfm/'
                         : '#'    
                     }  
                 >

@@ -40,7 +40,7 @@ const CrunchText = () => (
         <br />
 
         <p>Once users create their station CrunchFM makes a 
-        call to <a href="https://archive.org" target="_blank" rel="noopener noreferrer">archive.org&#39;s</a> 
+        call to <a href="https://archive.org" target="_blank" rel="noopener noreferrer">archive.org&#39;s </a> 
         API and plays random live recordings based on the user&#39;s input. Users can change their station at any time to create a unique 
         listening experience.</p>
         
@@ -52,7 +52,7 @@ const CrunchText = () => (
 
         <br /> 
         
-        <p>Built in React with HTML, CSS and JavaScript.</p>
+    <p>Built in <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">ReactJS</a> with HTML, CSS and JavaScript.</p>
     </ProjectHolder>
 )
 
