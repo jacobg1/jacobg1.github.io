@@ -13,7 +13,7 @@ const Card = styled.div`
 `
 
 const HeaderContainer = styled(Card) `
-  height: 255px;
+  height: 272px;
   margin: 0 auto;
   background: #ef6060;
   border-radius: 0;
@@ -42,11 +42,11 @@ const HeaderTitle = styled.h1 `
       margin-bottom: 67px;
 
       @media ${breakpoints.mobile} {
-            margin-bottom: 67px;
+            margin-bottom: 82px;
       }
 
       @media ${breakpoints.tablet} {
-            margin-bottom: 73px;
+            margin-bottom: 82px;
       }
 `
 

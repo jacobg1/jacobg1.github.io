@@ -7,7 +7,7 @@ const MobileModal = styled.div `
     position: absolute;
     background: #ef6060;
     top: 0;
-    height: 281px;
+    height: 297px;
     width: 100%;
     padding-top: 40px;
     /* z-index: -1; */
@@ -136,6 +136,7 @@ var links = [
     { text: 'Contact', href: '/contact/' },
     { text: 'Resume', href: '/resume/' },
     { text: 'Github', href: 'https://github.com/jacobg1' },
+    { text: 'LinkedIn', href: 'https://www.linkedin.com/in/jacob-greenwald-developer/'}
 ]
 
 class MobileMenu extends Component {
@@ -201,7 +202,15 @@ class MobileMenu extends Component {
                     >
                       { link.text }  
                     </a> 
-
+                    : link.text === 'LinkedIn'
+                    ? <a
+                        key={index}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {link.text}
+                    </a> 
                     : link.text === 'Resume'
                       && this.state.location === '/resume/'
 
@@ -250,6 +259,17 @@ class MobileMenu extends Component {
                         { link.text }
                         </a> 
                     </MenuButton>
+                        : link.text === 'LinkedIn' ?
+
+                            <MenuButton key={index}>
+                                <a
+                                    href={link.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {link.text}
+                                </a>
+                            </MenuButton>
 
                     : link.text === 'Resume'
                       && this.state.location === '/resume/'
