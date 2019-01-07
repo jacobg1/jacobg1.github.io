@@ -51,7 +51,7 @@ const SimonText = () => (
     audio api and using 
     <a href="https://d3js.org/" target="_blank" rel="noopener noreferrer"> D3.js</a> to 
     dynamically display a visual representation
-    of the height of the sound waves for whichever song is playing. </p>
+    of the frequency of the sound waves for whichever song is playing. </p>
 
     <br />
 
