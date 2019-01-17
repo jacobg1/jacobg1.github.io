@@ -134,7 +134,7 @@ const MenuButton = styled.div `
 var links = [
     { text: 'Projects', href: '/projects/' },
     { text: 'Contact', href: '/contact/' },
-    { text: 'Resume', href: '/resume/' },
+    // { text: 'Resume', href: '/resume/' },
     { text: 'Github', href: 'https://github.com/jacobg1' },
     { text: 'LinkedIn', href: 'https://www.linkedin.com/in/jacob-greenwald-developer/'}
 ]
