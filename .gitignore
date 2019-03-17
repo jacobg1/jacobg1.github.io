@@ -11,6 +11,4 @@ yarn-error.log
 .eslintrc.json
 settings.json
 
-#package-lock
-package-lock.json
 app.yaml
