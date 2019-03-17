@@ -6,6 +6,8 @@ cache:
   - node_modules
 script:
   - npm run build
+after_success:
+  - npm run add-domain  
 deploy:
   provider: pages
   skip-cleanup: true

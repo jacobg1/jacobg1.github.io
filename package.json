@@ -38,7 +38,8 @@
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gatsby build && gh-pages -d public -b master"
+    "deploy": "gatsby build && gh-pages -d public -b master",
+		"add-domain": "echo \"jacob-greenwald.com\" > public/CNAME"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^17.1.0",
