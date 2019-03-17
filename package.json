@@ -17,7 +17,7 @@
     "gatsby-plugin-sharp": "^2.0.13",
     "gatsby-plugin-styled-components": "^3.0.1",
     "gatsby-remark-copy-linked-files": "^2.0.6",
-    "gatsby-remark-images": "^2.0.5",
+    "gatsby-remark-images": "^2.0.6",
     "gatsby-source-filesystem": "^2.0.6",
     "gatsby-transformer-remark": "^2.1.11",
     "gatsby-transformer-sharp": "^2.1.4",
@@ -39,7 +39,7 @@
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "gatsby build && gh-pages -d public -b master",
-		"add-domain": "echo \"jacob-greenwald.com\" > public/CNAME"
+    "add-domain": "echo \"jacob-greenwald.com\" > public/CNAME"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^17.1.0",
