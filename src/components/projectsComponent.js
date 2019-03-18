@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { breakpoints } from './breakpoints'
 // import Img from 'gatsby-image';
 import SpaceText from './spaceText'
-import CrunchText from './crunchText'
+import ProjectOne from './ProjectOne'
 import SimonText from './simonText'
 import spaceImage from '../images/space.png'
 // import crunchImage from '../images/turntable.png'
@@ -14,7 +14,7 @@ import ProjectLinks from './projectLinks'
 
 
 const NavFlex = styled.div`
-  max-width: 450px;
+  max-width: 525px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -173,12 +173,11 @@ class ProjectsComponent extends Component {
             <React.Fragment>
                 <ProjectTitle> 
                 {
-                    this.state.spaceActive ? 'Concert Search'
-                    : this.state.crunchActive ? 'Space Search'
-                    : this.state.simonActive ? 'CRUNCHfm'
-                    : ''
-                }
-                   
+									this.state.spaceActive  ? 'Data Playground'
+									: this.state.crunchActive? 'Concert Search'
+									: this.state.simonActive ? 'Space Search'
+									: ''
+								}
                 </ProjectTitle>
                 <ProjectIcon>
                     <img src={ spaceImage }/>
@@ -189,10 +188,10 @@ class ProjectsComponent extends Component {
         const projectBody = (
 
             <ProjectCard>
-                {
-                    this.state.spaceActive ? <SimonText />
-                    : this.state.crunchActive ? <SpaceText />
-                    : this.state.simonActive ? <CrunchText />
+                {		
+										this.state.spaceActive ? <ProjectOne />
+                    : this.state.crunchActive ? <SimonText />
+                    : this.state.simonActive ? <SpaceText />
                     : ''
                 }
 
@@ -213,21 +212,22 @@ class ProjectsComponent extends Component {
                       className={ this.state.spaceActive ? 'space-active' : '' }
                       onClick={ this.showSpace }
                     >
-                     Concert Search
+                     Data Playground
                     </ProjectSwitch>
 
                     <ProjectSwitch 
                       className={ this.state.crunchActive ? 'crunch-active' : '' }
                       onClick={ this.showCrunch }
                     >
-                       Space Search
+                       
+                      Concert Search
                     </ProjectSwitch>
 
                     <ProjectSwitch 
                       className={ this.state.simonActive ? 'simon-active' : '' }
                       onClick={ this.showSimon }
                     >
-                      CRUNCHfm
+                      Space Search
                     </ProjectSwitch>
                 </NavFlex>
 
