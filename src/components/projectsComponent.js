@@ -73,12 +73,12 @@ const ProjectTitle = styled.h2`
   text-align: center;
   text-shadow: 0 1px 1px rgb(106,80,91);
   font-size: 35px;
-  margin: 55px 0 15px 0;
+  margin: 115px 0 15px 0;
   display: inline-block;
 
   @media ${breakpoints.laptop} {
     font-size: 40px;
-    margin: 50px 0 30px 0;
+    ${'' /* margin: 50px 0 30px 0; */}
   }
 
   @media ${breakpoints.desktop} {
@@ -104,7 +104,7 @@ const ProjectIcon = styled.div`
 `
 const ProjectCard = styled.div`
   background: #4065b7;
-  border: 2px solid #ef6061;
+  border: 2px solid #e7e9ef;
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   margin: 0 auto 20px auto;

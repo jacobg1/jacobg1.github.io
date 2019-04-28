@@ -8,10 +8,10 @@ import downloadIcon from '../images/file-download-solid.svg'
 
 const ResumeHolder = styled.div`
     text-align: center;
-    padding-top: 45px;
+    padding-top: 90px;
 
     @media ${breakpoints.laptop} {
-        padding-top: 75px;
+        padding-top: 100px;
     }
 
     & canvas {
@@ -34,6 +34,7 @@ const ResumeHolder = styled.div`
             width: 50px;
             position: absolute;
             right: 16px;
+						z-index: -1;
         }
 
         @media ${breakpoints.desktop} {

@@ -21,7 +21,7 @@ const LinkHolder = styled.div`
   line-height: 37px;
   text-align: center;
   position: relative;
-  background: #ef6c6f;
+  background: #4971bd;
   border-radius: 30px;
   border: 2px solid #f3f3f3;
   transition: all .3s ease-in-out;

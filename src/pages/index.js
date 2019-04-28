@@ -7,8 +7,8 @@ import { breakpoints } from '../components/breakpoints';
 const ContentCard = styled.div `
   padding: 15px;
   width: 91%;
-  margin: 50px auto 43px auto;
-  border: 2px solid #ef6061;
+  margin: 115px auto 43px auto;
+  border: 2px solid #e7e9ef;
   background: #4066b7;
   border-radius: 5px;
   max-width: 400px;
@@ -51,6 +51,8 @@ const FlexContainer = styled.div `
   justify-content: space-between;
   max-width: 295px;
   margin: 0 auto;
+	z-index: -1;
+  position: relative;
 
   @media ${breakpoints.tablet} {
     max-width: 492px;
@@ -64,7 +66,7 @@ const FlexContainer = styled.div `
 const SkillsHolder = styled.div `
   background: #4065b7;
   color: #f1f1f1;
-  border: 2px solid #ef6061;
+  border: 2px solid #e7e9ef;
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   box-sizing: border-box;
@@ -135,11 +137,13 @@ const KeyContent = styled.div `
   width: 80%;
   margin: 43px auto;
   padding: 13px;
-  border: 2px solid #f16b6c;
+  border: 2px solid #e7e9ef;
   background: #4971bf;
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   max-width: 270px;
+	z-index: -1;
+  position: relative;
 
   @media ${breakpoints.tablet} {
     max-width: 496px;

@@ -7,18 +7,12 @@ const MobileModal = styled.div `
     position: absolute;
     background: #ef6060;
     top: 0;
-    height: 297px;
+    height: 280px;
     width: 100%;
     padding-top: 40px;
     /* z-index: -1; */
     /* box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
-    
-    @media ${breakpoints.specialHeader} {
-        width: 200px;
-        height: 253.5px;
-        padding-top: 30px;
-      
-    }
+   
     @media ${breakpoints.tablet} {
         padding-top: 32px;
         
@@ -45,17 +39,18 @@ const MobileModal = styled.div `
 const MobileMenuContainer = styled.div `
     display: inline;
     position: absolute;
-    left: 15px;
-    top: 15px;
+    top: 41%;
+    transform: translateY(-43%);
+    right: 13px;
     z-index: 1;
     cursor: pointer;
     @media ${breakpoints.laptop} {
         display: none;
     }
     & span {
-        width: 35px;
+        width: 30px;
         display: block;
-        border-bottom: 6px solid #f1f1f1;
+        border-bottom: 3px solid #f1f1f1;
         box-shadow: 0px 3px #78b4f9;
         padding-bottom: 4px;  
         
@@ -69,14 +64,14 @@ const MobileMenuContainer = styled.div `
     & span.rotateUp {
         transform: rotate(45deg);
         position: absolute;
-        top: 8px;
-        width: 40px;
+        top: 0;
+        width: 30px;
     }
     & span.rotateDown {
         transform: rotate(-45deg);
         position: absolute;
-        top: 8px;
-        width: 40px;
+        top: 0;
+        width: 30px;
         left: -4px;
     }
     & span.disappear {
@@ -91,14 +86,14 @@ const DesktopMenu = styled.div `
         display: block;
         float: right;
         padding-right: 35px;
-        padding-top: 10px;
+        padding-top: 17px;
     }
 
     & a {
         color: white;
         display: block;
         text-decoration: none;
-        font-size: 16px;
+        font-size: 14px;
         text-shadow: 0 1px 1px rgb(41, 35, 37);
         /* font-weight: bold; */
         font-weight: normal;
@@ -114,7 +109,7 @@ const MenuButton = styled.div `
     margin-left: 25px;
     border-radius: 30px;
     border: 2px solid #73b2fb;
-    background: #70b0fe;
+    ${'' /* background: #70b0fe; */}
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     transition: all .3s ease-in-out;
     width: 95px;

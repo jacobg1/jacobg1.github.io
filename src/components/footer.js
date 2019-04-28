@@ -6,7 +6,7 @@ import { breakpoints } from './breakpoints'
 
 const FooterContainer = styled.div`
     width: 100%;
-    background: #ef6060;
+    background: #4971bd;
     display: flex;
     justify-content: space-around;
     align-items: center;

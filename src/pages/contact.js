@@ -4,12 +4,12 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import ContactForm from '../components/contactForm'
 import styled from 'styled-components'
-import { breakpoints } from '../components/breakpoints';
+// import { breakpoints } from '../components/breakpoints';
 
 const ContentCard = styled.div`
   padding: 5px 0;
   width: 91%;
-  margin: 52px auto 43px auto;
+  margin: 200px auto 43px auto;
   background: #f1f1f1;
   border-radius: 5px;
   text-align: center;
@@ -36,10 +36,6 @@ const ContentCard = styled.div`
       :hover {
         color: #73b2fb;
       }
-  }
-
-  @media ${breakpoints.tablet} {
-    margin-top: 95px;
   }
 `
 
