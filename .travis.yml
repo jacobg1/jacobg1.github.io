@@ -1,8 +1,7 @@
 language: node_js
 node_js:
-  - "stable"
+  - "11"
 script:
-  - npm rebuild
   - npm install
   - npm run build
 after_success:
