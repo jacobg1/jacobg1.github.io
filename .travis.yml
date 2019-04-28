@@ -5,6 +5,7 @@ cache:
   directories:
   - node_modules
 script:
+  - npm rebuild
   - npm run build
 after_success:
   - npm run add-domain  
