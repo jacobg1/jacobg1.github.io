@@ -38,9 +38,24 @@ const ProjectOne = () => (
 
         <br />
 
-        <p>Search for stock or crypto prices and view data in line graph format.  Includes ability to view high, low, open and close prices.  Users can hover over data points for more detailed information.</p>
+        <p>
+					Search for stock or crypto prices and view data in line graph format.  
+					Includes ability to view high, low, open and close prices.  
+					Users can hover over data points for more detailed information.
+				</p>
         
-        <br />  
+				<br />
+
+				<p>
+					Users can view stock prices from NASDAQ and NYSE stock markets.  
+					Crypto coin types include BTC, ETH, BCH, LTC and more.
+				</p>
+				
+				<br />
+				
+				<p>Data provided by <a href="https://www.alphavantage.co/" target="_blank" rel="noopener noreferrer">Alpha Vantage&#39;s</a> API.</p>
+        
+				<br />  
         
        <p>Built in <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">ReactJS</a> with D3, Redux, HTML, CSS and JavaScript.</p>
     </ProjectHolder>

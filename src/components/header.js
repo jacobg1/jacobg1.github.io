@@ -21,6 +21,7 @@ const HeaderContainer = styled(Card) `
   background: #ef6060;
   border-radius: 0;
 	background: #4971be;
+	z-index: 2;
 `
 
 const HeaderContentWrapper = styled.div `

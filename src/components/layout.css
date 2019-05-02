@@ -17,6 +17,7 @@ body {
 } */
 @font-face {
   font-family: 'Archivo';
+  font-display: auto;
   font-style: normal;
   font-weight: 400;
   src: local('Archivo Black Regular'), local('ArchivoBlack-Regular'), url("https://fonts.gstatic.com/s/archivoblack/v7/HTxqL289NzCGg4MzN6KJ7eW6CYyF_jzx13E.woff2") format('woff2');
@@ -32,6 +33,7 @@ body {
 } */
 @font-face {
   font-family: 'Roboto-reg';
+  font-display: auto;
   font-style: normal;
   font-weight: 400;
   src: local('Roboto'), local('Roboto-Regular'), url("https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2") format('woff2');
@@ -39,6 +41,7 @@ body {
 }
 @font-face {
   font-family: 'Roboto-bold';
+  font-display: auto;
   font-style: normal;
   font-weight: 700;
   src: local('Roboto Bold'), local('Roboto-Bold'), url("https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2") format('woff2');

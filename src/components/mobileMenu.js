@@ -5,7 +5,7 @@ import { breakpoints } from './breakpoints'
 
 const MobileModal = styled.div `
     position: absolute;
-    background: #ef6060;
+    background: #4065b7;
     top: 0;
     height: 280px;
     width: 100%;
