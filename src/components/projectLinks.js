@@ -15,7 +15,7 @@ const FlexContainer = styled.div`
 `
 
 const LinkHolder = styled.div`
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   margin-bottom: 20px;
   width: 45%;
   line-height: 37px;
@@ -24,19 +24,17 @@ const LinkHolder = styled.div`
   background: #4971bd;
   border-radius: 30px;
   border: 2px solid #f3f3f3;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
   :hover {
-    
-      opacity: .7;
-      box-shadow: none;
-      text-shadow: 0 1px 1px rgb(41,35,37);
-      background: #8cc3f9;
-   
+    opacity: 0.7;
+    box-shadow: none;
+    text-shadow: 0 1px 1px rgb(41, 35, 37);
+    background: #8cc3f9;
   }
-   
+
   & a {
-    text-decoration: none; 
+    text-decoration: none;
     width: 100%;
     display: inline-block;
     padding-left: 5px;
@@ -55,13 +53,13 @@ const LinkHolder = styled.div`
     }
   }
 
-  && img{
+  && img {
     width: 20px;
     margin: 0;
     position: absolute;
     left: 10px;
     top: 8px;
-    
+
     @media ${breakpoints.desktop} {
       width: 24px;
       top: 8px;
@@ -83,58 +81,55 @@ const ButtonFlex = styled(FlexContainer)`
 `
 
 class ProjectLinks extends Component {
+  render() {
+    return (
+      <ButtonFlex>
+        <LinkHolder>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href={
+              this.props.spaceLinks
+                ? 'https://github.com/jacobg1/stock-viz'
+                : this.props.crunchLinks
+                ? 'https://github.com/jacobg1/concert-search-2.0'
+                : this.props.simonLinks
+                ? 'https://github.com/jacobg1/SpaceSearch'
+                : '#'
+            }
+          >
+            <img src={githubLogo} alt="github logo" />
+            Repo
+          </a>
+        </LinkHolder>
 
-    constructor(props) {
-        super(props)
-    }
-
-    render () {
-        return (
-            <ButtonFlex>
-                <LinkHolder>   
-                <a 
-                    rel="noopener noreferrer" 
-                    target="_blank"
-                    href={
-                        this.props.spaceLinks ? 'https://github.com/jacobg1/data-playground'
-												: this.props.crunchLinks ? 'https://github.com/jacobg1/concert-search'
-                        : this.props.simonLinks ? 'https://github.com/jacobg1/SpaceSearch'
-                        : '#'    
-                    } 
-                >
-
-                <img src={ githubLogo } alt="github logo"></img>
-                    Repo
-                </a>
-                
-                </LinkHolder>
-
-                <LinkHolder>
-                <a 
-                    rel="noopener noreferrer" 
-                    target="_blank"
-                    href={
-                        this.props.spaceLinks ? 'https://jacob-greenwald.com/data-playground/'
-												: this.props.crunchLinks ? 'http://concert-search.surge.sh'
-                        : this.props.simonLinks ? 'http://space-search.surge.sh'
-                        : '#'    
-                    }  
-                >
-
-                <img src={ rocketLogo } alt="rocket logo"></img>
-                    App
-                </a>
-
-                </LinkHolder>
-            </ButtonFlex>
-        )
-    }
+        <LinkHolder>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href={
+              this.props.spaceLinks
+                ? 'https://jacob-greenwald.com/stock-viz'
+                : this.props.crunchLinks
+                ? 'https://concert-search.com'
+                : this.props.simonLinks
+                ? 'http://space-search.surge.sh'
+                : '#'
+            }
+          >
+            <img src={rocketLogo} alt="rocket logo" />
+            App
+          </a>
+        </LinkHolder>
+      </ButtonFlex>
+    )
+  }
 }
 
 export default ProjectLinks
 
 ProjectLinks.propTypes = {
-    simonLinks: PropTypes.bool.isRequired,
-    spaceLinks: PropTypes.bool.isRequired,
-    crunchLinks: PropTypes.bool.isRequired
+  simonLinks: PropTypes.bool.isRequired,
+  spaceLinks: PropTypes.bool.isRequired,
+  crunchLinks: PropTypes.bool.isRequired,
 }
